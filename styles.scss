@@ -559,12 +559,14 @@ body {
   .sobremi {
     flex-direction: column-reverse;
     align-items: center;
+    padding: 60px 12px;
+    gap: 20px;
 
     .textSobremi {
       @include centerCol;
       text-align: center;
-      padding: 12% 7%;
       width: 100%;
+      padding: 0;
 
       .titulo-sobremi {
         margin-bottom: 8%;
@@ -654,20 +656,13 @@ body {
 
 
 ////////////// Proyectos
-
-.codigo {
-  padding: 100px 0 100px 0;
-}
-
-.wp {
-  padding: 0 0 100px 0;
-}
-
-#proyectos div {
+#proyectos {
   width: 100%;
   height: auto;
-  // padding: 7% 0;
-  background-color: transparent;
+  padding: 100px 20px 100px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
 
   h1 {
     display: block;
@@ -774,19 +769,10 @@ body {
 }
 
 @media(max-width:767px) {
-  .codigo {
-    padding: 80px 20px 60px 20px;
-  }
 
-  .wp {
-    padding: 0 20px 80px 20px;
-  }
-
-  #proyectos div {
-    width: 100%;
-    height: auto;
-    // padding: 0 20px;
-    background-color: transparent;
+  #proyectos {
+    padding: 80px 12px;
+    gap: 60px;
 
     h1 {
       text-align: center;
