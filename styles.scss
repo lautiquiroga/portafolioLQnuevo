@@ -1,3 +1,6 @@
+$white: #c9b9d3;
+$light-grey: #aaa4da;
+$black: #404258;
 $magentaClaro: #c4104fb4;
 $magenta: #b70543;
 $gris: #333333;
@@ -124,13 +127,13 @@ html::-webkit-scrollbar-thumb {
         transition: all 0.3s;
         padding-bottom: 0;
 
-        // &:hover,
-        // &.active {
-        //   color: rgb(44, 131, 189);
-        //   padding: 0.5rem;
-        //   border-bottom: 1px solid rgb(44, 131, 189);
-        //   transition: all 0.5s;
-        // }
+        &:hover,
+        &.active {
+          color: rgb(44, 131, 189);
+          padding: 0.5rem;
+          border-bottom: 1px solid rgb(44, 131, 189);
+          transition: all 0.5s;
+        }
       }
     }
   }
@@ -174,11 +177,20 @@ html::-webkit-scrollbar-thumb {
         .navbar-collapse {
           .navbar-nav {
             @include centerCol;
+            gap: 40px;
+            padding-bottom: 20px;
 
             .nav-link {
-              margin: 1%;
-              font-size: 4vw;
+              font-size: 20px;
               text-align: center;
+              margin: 0;
+              padding: 0;
+            }
+
+            @media(min-width: 768px) {
+              & {
+                gap: 20px;
+              }
             }
           }
         }
@@ -311,6 +323,7 @@ body {
     .circle {
       opacity: 0.7;
       transition: all 0.3s;
+      text-decoration: none;
 
       @media (max-width: 1199px) {
         display: none;
@@ -494,64 +507,32 @@ body {
 
 @media(max-width:767px) {
   .inicio {
-    height: auto;
-    background-color: rgb(13, 13, 13);
-    background-image: url("./media/fondo1.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    @include centerCol;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    box-shadow: 0px 0px 0.8rem 0px rgb(12, 30, 43);
-    border-radius: 0 0 8vw 8vw;
-    -webkit-border-radius: 0 0 8vw 8vw;
-    -moz-border-radius: 0 0 8vw 8vw;
-    -ms-border-radius: 0 0 8vw 8vw;
-    -o-border-radius: 0 0 8vw 8vw;
     padding: 6vh 20px 0 20px;
 
     .textoInicio {
       width: 100%;
       padding: 0;
+      text-align: center;
 
       .hola {
         font-size: 6vw;
-        line-height: 1.2;
-        margin-bottom: 0;
       }
 
       .titulo-inicio {
         margin-bottom: 2vh;
         font-size: 16vw;
-        line-height: 0.9;
-        color: rgb(44, 131, 189);
-        letter-spacing: 0.7vw;
       }
 
       .descr-inicio {
-        font-size: 4.4vw;
-        font-weight: 400;
-        line-height: $descrLineHeight;
-
-        p {
-          margin: 0;
-        }
+        font-size: 20px;
       }
 
       .btnsInicio {
         margin: 2vh 0;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
 
         .button-inicio {
-          text-decoration: none;
-          transition: all 0.3s;
-          font-weight: $light;
-          background-color: rgb(44, 131, 189);
-          color: black;
-          font-weight: 500;
           font-size: $descrSizeResp;
           padding: 2vw;
           text-align: center;
@@ -561,29 +542,12 @@ body {
           -moz-border-radius: 2vw;
           -ms-border-radius: 2vw;
           -o-border-radius: 2vw;
-
-          //a:;
-          &.cv {
-            margin-left: 5vw;
-          }
-
-          &:hover {
-            background: #353c5c;
-            color: white;
-            transition: all 0.4s ease;
-          }
         }
       }
     }
 
     .fotoContainer {
-      display: flex;
-      // justify-content: center;
       margin-left: 5%;
-      align-items: flex-end;
-      height: 100%;
-      width: auto;
-      padding-right: 6%;
 
       .camisa {
         height: 40vh;
@@ -593,59 +557,28 @@ body {
   }
 
   .sobremi {
-    background-color: transparent;
-    height: auto;
-    position: relative;
     flex-direction: column-reverse;
     align-items: center;
 
     .textSobremi {
       @include centerCol;
-      // align-items: flex-start;
+      text-align: center;
       padding: 12% 7%;
       width: 100%;
 
       .titulo-sobremi {
-        color: white;
         margin-bottom: 8%;
         font-size: $tituloSizeResp;
-        line-height: 1;
-      }
-
-      .menuVirtual {
-        color: #fbb03b;
-        font-weight: 700;
       }
 
       .descr-sobremi {
         font-size: $descrSizeResp;
-        font-weight: 400;
-        line-height: $descrLineHeight;
-        color: white;
-        margin: 0;
-
-        .contenedorSpline {
-          position: relative;
-          height: 50vw;
-          width: 100%;
-          @include center;
-
-          .splineContainer {
-            position: absolute;
-            width: 100vw;
-            bottom: 0vw;
-          }
-        }
       }
     }
   }
 
   .tecnologias {
-    background-color: rgb(13, 13, 13);
-    height: auto;
     padding: 12% 7%;
-    @include centerCol;
-    box-shadow: 0px 0px 0.8rem 0px rgb(12, 30, 43);
     border-radius: 8vw;
     -webkit-border-radius: 8vw;
     -moz-border-radius: 8vw;
@@ -653,9 +586,7 @@ body {
     -o-border-radius: 8vw;
 
     .titulo-tecno {
-      color: rgb(44, 131, 189);
       font-size: $tituloSizeResp;
-      line-height: 1;
       margin-bottom: 15%;
     }
 
@@ -668,13 +599,8 @@ body {
       gap: 8vw;
 
       .cardTecno {
-        @include centerCol;
-        justify-content: space-evenly;
         width: 35vw;
         height: 50vw;
-        //padding: 2rem 0;
-        background-color: #101725;
-        color: white;
         border-radius: 4vw;
         -webkit-border-radius: 4vw;
         -moz-border-radius: 4vw;
@@ -728,15 +654,6 @@ body {
 
 
 ////////////// Proyectos
-
-/* Variables */
-$white: #c9b9d3;
-$light-grey: #aaa4da;
-$beaver: rgb(93, 111, 187);
-$black: #404258;
-$eerie-black: #141824;
-$jet: #131520;
-$descrLineHeight: 1.6;
 
 .codigo {
   padding: 100px 0 100px 0;
@@ -872,13 +789,10 @@ $descrLineHeight: 1.6;
     background-color: transparent;
 
     h1 {
-      display: block;
       text-align: center;
-      color: rgb(255, 255, 255);
       color: black;
       font-size: $tituloSizeResp;
-      letter-spacing: 0.1vw;
-      line-height: 1.2;
+      padding-bottom: 30px;
     }
 
     .cards_container--proyectos {
@@ -902,6 +816,7 @@ $descrLineHeight: 1.6;
         -moz-border-radius: 4vw;
         -ms-border-radius: 4vw;
         -o-border-radius: 4vw;
+        height: fit-content;
 
         .video {
           height: 50vw;
@@ -922,45 +837,37 @@ $descrLineHeight: 1.6;
 
           img {
             width: 100%;
-            border-radius: 2vw 2vw 0 0;
-            -webkit-border-radius: 2vw 2vw 0 0;
-            -moz-border-radius: 2vw 2vw 0 0;
-            -ms-border-radius: 2vw 2vw 0 0;
-            -o-border-radius: 2vw 2vw 0 0;
+            border-radius: 4vw 4vw 0 0;
+            -webkit-border-radius: 4vw 4vw 0 0;
+            -moz-border-radius: 4vw 4vw 0 0;
+            -ms-border-radius: 4vw 4vw 0 0;
+            -o-border-radius: 4vw 4vw 0 0;
             height: 50vw;
             object-fit: cover;
           }
         }
 
         .container_textCard--proyectos {
-          padding: 5%;
+          padding: 30px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
           justify-content: space-between;
           width: 100%;
-          height: auto;
+          min-height: 0;
+          height: fit-content;
 
           .cardTexto {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            text-align: center;
 
             h2 {
-              letter-spacing: 0.1vw;
               font-size: 5vw;
-              color: $white;
-              display: inline;
-              line-height: 1;
+              text-align: center;
+              width: 100%;
             }
 
             p {
-              color: $white;
               font-size: $descrSizeResp;
-              font-weight: 400;
-              line-height: $descrLineHeight;
-              margin-top: 1vw;
-              margin-bottom: 0;
             }
 
             .naranja {

@@ -56,6 +56,12 @@ html::-webkit-scrollbar-thumb {
   transition: all 0.3s;
   padding-bottom: 0;
 }
+.navContainer .navbar .navbar-nav .nav-link:hover, .navContainer .navbar .navbar-nav .nav-link.active {
+  color: rgb(44, 131, 189);
+  padding: 0.5rem;
+  border-bottom: 1px solid rgb(44, 131, 189);
+  transition: all 0.5s;
+}
 
 .header.abajo {
   -webkit-backdrop-filter: blur(15px);
@@ -92,12 +98,22 @@ html::-webkit-scrollbar-thumb {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 40px;
+    padding-bottom: 20px;
   }
   .navContainer .navbar .containNav .navbar-collapse .navbar-nav .nav-link {
-    margin: 1%;
-    font-size: 4vw;
+    font-size: 20px;
     text-align: center;
+    margin: 0;
+    padding: 0;
   }
+}
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+  .navContainer .navbar .containNav .navbar-collapse .navbar-nav {
+    gap: 20px;
+  }
+}
+@media only screen and (max-width: 991px) {
   .header.abajo {
     background-color: rgb(13, 13, 13) !important;
     box-shadow: 0px 0px 0.8rem 0px rgba(0, 0, 0, 0.207);
@@ -196,6 +212,7 @@ body {
 .inicio .textoInicio .circle {
   opacity: 0.7;
   transition: all 0.3s;
+  text-decoration: none;
 }
 @media (max-width: 1199px) {
   .inicio .textoInicio .circle {
@@ -365,63 +382,29 @@ body {
 
 @media (max-width: 767px) {
   .inicio {
-    height: auto;
-    background-color: rgb(13, 13, 13);
-    background-image: url("./media/fondo1.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    box-shadow: 0px 0px 0.8rem 0px rgb(12, 30, 43);
-    border-radius: 0 0 8vw 8vw;
-    -webkit-border-radius: 0 0 8vw 8vw;
-    -moz-border-radius: 0 0 8vw 8vw;
-    -ms-border-radius: 0 0 8vw 8vw;
-    -o-border-radius: 0 0 8vw 8vw;
     padding: 6vh 20px 0 20px;
   }
   .inicio .textoInicio {
     width: 100%;
     padding: 0;
+    text-align: center;
   }
   .inicio .textoInicio .hola {
     font-size: 6vw;
-    line-height: 1.2;
-    margin-bottom: 0;
   }
   .inicio .textoInicio .titulo-inicio {
     margin-bottom: 2vh;
     font-size: 16vw;
-    line-height: 0.9;
-    color: rgb(44, 131, 189);
-    letter-spacing: 0.7vw;
   }
   .inicio .textoInicio .descr-inicio {
-    font-size: 4.4vw;
-    font-weight: 400;
-    line-height: 150%;
-  }
-  .inicio .textoInicio .descr-inicio p {
-    margin: 0;
+    font-size: 20px;
   }
   .inicio .textoInicio .btnsInicio {
     margin: 2vh 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
   .inicio .textoInicio .btnsInicio .button-inicio {
-    text-decoration: none;
-    transition: all 0.3s;
-    font-weight: 300;
-    background-color: rgb(44, 131, 189);
-    color: black;
-    font-weight: 500;
     font-size: 4.2vw;
     padding: 2vw;
     text-align: center;
@@ -432,30 +415,14 @@ body {
     -ms-border-radius: 2vw;
     -o-border-radius: 2vw;
   }
-  .inicio .textoInicio .btnsInicio .button-inicio.cv {
-    margin-left: 5vw;
-  }
-  .inicio .textoInicio .btnsInicio .button-inicio:hover {
-    background: #353c5c;
-    color: white;
-    transition: all 0.4s ease;
-  }
   .inicio .fotoContainer {
-    display: flex;
     margin-left: 5%;
-    align-items: flex-end;
-    height: 100%;
-    width: auto;
-    padding-right: 6%;
   }
   .inicio .fotoContainer .camisa {
     height: 40vh;
     width: auto;
   }
   .sobremi {
-    background-color: transparent;
-    height: auto;
-    position: relative;
     flex-direction: column-reverse;
     align-items: center;
   }
@@ -464,48 +431,19 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     padding: 12% 7%;
     width: 100%;
   }
   .sobremi .textSobremi .titulo-sobremi {
-    color: white;
     margin-bottom: 8%;
     font-size: 7vw;
-    line-height: 1;
-  }
-  .sobremi .textSobremi .menuVirtual {
-    color: #fbb03b;
-    font-weight: 700;
   }
   .sobremi .textSobremi .descr-sobremi {
     font-size: 4.2vw;
-    font-weight: 400;
-    line-height: 150%;
-    color: white;
-    margin: 0;
-  }
-  .sobremi .textSobremi .descr-sobremi .contenedorSpline {
-    position: relative;
-    height: 50vw;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .sobremi .textSobremi .descr-sobremi .contenedorSpline .splineContainer {
-    position: absolute;
-    width: 100vw;
-    bottom: 0vw;
   }
   .tecnologias {
-    background-color: rgb(13, 13, 13);
-    height: auto;
     padding: 12% 7%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 0px 0.8rem 0px rgb(12, 30, 43);
     border-radius: 8vw;
     -webkit-border-radius: 8vw;
     -moz-border-radius: 8vw;
@@ -513,9 +451,7 @@ body {
     -o-border-radius: 8vw;
   }
   .tecnologias .titulo-tecno {
-    color: rgb(44, 131, 189);
     font-size: 7vw;
-    line-height: 1;
     margin-bottom: 15%;
   }
   .tecnologias .cardsTecno {
@@ -527,15 +463,8 @@ body {
     gap: 8vw;
   }
   .tecnologias .cardsTecno .cardTecno {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-evenly;
     width: 35vw;
     height: 50vw;
-    background-color: #101725;
-    color: white;
     border-radius: 4vw;
     -webkit-border-radius: 4vw;
     -moz-border-radius: 4vw;
@@ -577,7 +506,6 @@ body {
     margin: 0;
   }
 }
-/* Variables */
 .codigo {
   padding: 100px 0 100px 0;
 }
@@ -674,7 +602,7 @@ body {
   color: #c9b9d3;
   font-size: 18px;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 150%;
   margin-top: 1vw;
   margin-bottom: 0;
 }
@@ -696,13 +624,10 @@ body {
     background-color: transparent;
   }
   #proyectos div h1 {
-    display: block;
     text-align: center;
-    color: rgb(255, 255, 255);
     color: black;
     font-size: 7vw;
-    letter-spacing: 0.1vw;
-    line-height: 1.2;
+    padding-bottom: 30px;
   }
   #proyectos div .cards_container--proyectos {
     display: flex;
@@ -724,6 +649,8 @@ body {
     -moz-border-radius: 4vw;
     -ms-border-radius: 4vw;
     -o-border-radius: 4vw;
+    height: -moz-fit-content;
+    height: fit-content;
   }
   #proyectos div .cards_container--proyectos .cards--proyectos .video {
     height: 50vw;
@@ -743,43 +670,36 @@ body {
   }
   #proyectos div .cards_container--proyectos .cards--proyectos .container_imgCard--proyectos img {
     width: 100%;
-    border-radius: 2vw 2vw 0 0;
-    -webkit-border-radius: 2vw 2vw 0 0;
-    -moz-border-radius: 2vw 2vw 0 0;
-    -ms-border-radius: 2vw 2vw 0 0;
-    -o-border-radius: 2vw 2vw 0 0;
+    border-radius: 4vw 4vw 0 0;
+    -webkit-border-radius: 4vw 4vw 0 0;
+    -moz-border-radius: 4vw 4vw 0 0;
+    -ms-border-radius: 4vw 4vw 0 0;
+    -o-border-radius: 4vw 4vw 0 0;
     height: 50vw;
     -o-object-fit: cover;
        object-fit: cover;
   }
   #proyectos div .cards_container--proyectos .cards--proyectos .container_textCard--proyectos {
-    padding: 5%;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
     width: 100%;
-    height: auto;
+    min-height: 0;
+    height: -moz-fit-content;
+    height: fit-content;
   }
   #proyectos div .cards_container--proyectos .cards--proyectos .container_textCard--proyectos .cardTexto {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    text-align: center;
   }
   #proyectos div .cards_container--proyectos .cards--proyectos .container_textCard--proyectos .cardTexto h2 {
-    letter-spacing: 0.1vw;
     font-size: 5vw;
-    color: #c9b9d3;
-    display: inline;
-    line-height: 1;
+    text-align: center;
+    width: 100%;
   }
   #proyectos div .cards_container--proyectos .cards--proyectos .container_textCard--proyectos .cardTexto p {
-    color: #c9b9d3;
     font-size: 4.2vw;
-    font-weight: 400;
-    line-height: 1.6;
-    margin-top: 1vw;
-    margin-bottom: 0;
   }
   #proyectos div .cards_container--proyectos .cards--proyectos .container_textCard--proyectos .cardTexto .naranja {
     color: #fbb03b;
