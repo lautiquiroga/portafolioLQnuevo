@@ -25,6 +25,11 @@ header {
   padding: 1% 0;
   background-color: transparent;
 }
+header.headerBlack {
+  background-color: rgba(13, 13, 13, 0.742);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
 header .navbar {
   --bs-navbar-padding-y: none;
   display: flex;
@@ -52,7 +57,7 @@ header .navbar .navbar-nav .nav-link {
   transition: all 0.3s;
   padding-bottom: 0;
 }
-header .navbar .navbar-nav .nav-link:hover, header .navbar .navbar-nav .nav-link.active {
+header .navbar .navbar-nav .nav-link.active {
   color: rgb(44, 131, 189);
   padding: 0.5rem;
   border-bottom: 1px solid rgb(44, 131, 189);
@@ -70,15 +75,6 @@ header .navbar .navbar-nav .nav-link:hover, header .navbar .navbar-nav .nav-link
   header {
     min-height: 5vh;
   }
-}
-@media (max-width: 991px) and (max-width: 767px) {
-  header {
-    background-color: rgba(13, 13, 13, 0.742) !important;
-    -webkit-backdrop-filter: blur(2px) !important;
-            backdrop-filter: blur(2px) !important;
-  }
-}
-@media (max-width: 991px) {
   header .navbar .containNav {
     display: flex;
     justify-content: flex-end;

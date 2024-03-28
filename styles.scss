@@ -15,6 +15,8 @@ $descrLineHeight: 150%;
 $light: 300;
 $white: #c9b9d3;
 $jet: #131520;
+$eerie-black: #141824;
+
 
 @mixin center {
   display: flex;
@@ -94,6 +96,11 @@ header {
   padding: 1% 0;
   background-color: transparent;
 
+  &.headerBlack {
+    background-color: rgba(13, 13, 13, 0.742);
+    backdrop-filter: blur(2px);
+  }
+
   .navbar {
     --bs-navbar-padding-y: none;
     display: flex;
@@ -124,7 +131,7 @@ header {
         transition: all 0.3s;
         padding-bottom: 0;
 
-        &:hover,
+
         &.active {
           color: rgb(44, 131, 189);
           padding: 0.5rem;
@@ -146,11 +153,6 @@ header {
 @media (max-width: 991px) {
   header {
     min-height: 5vh;
-
-    @media(max-width: 767px) {
-      background-color: rgba(13, 13, 13, 0.742) !important;
-      backdrop-filter: blur(2px) !important;
-    }
 
     .navbar {
       .containNav {
@@ -211,8 +213,6 @@ header {
 
 
 ////////////// Home
-
-$eerie-black: #141824;
 
 * {
   margin: 0;
