@@ -26,7 +26,7 @@
 
   <body>
     <!-- Header -->
-    <header class="navContainer header headerBlack">
+    <header>
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid containNav">
           <button
@@ -84,13 +84,15 @@
     <!-- Inicio -->
     <section id="home" class="inicio">
       <div class="textoInicio">
-        <p class="hola">Hola! Soy</p>
-        <h1 class="titulo-inicio">Lautaro Quiroga</h1>
+        <div>
+          <p class="hola">Hola! Soy</p>
+          <h1 class="titulo-inicio">Lautaro Quiroga</h1>
+        </div>
         <div class="descr-inicio">
           <p>
-            Soy desarrollador web especializado en FrontEnd, con conocimientos
-            de BackEnd. Poseo experiencia profesional en el uso de WordPress y
-            en desarrollo de software.
+            Soy desarrollador web con especialización en FrontEnd y
+            conocimientos de BackEnd. Poseo experiencia profesional en el uso de
+            WordPress y en desarrollo de software.
           </p>
         </div>
         <div class="btnsInicio">
@@ -103,28 +105,45 @@
           >
             CURRÍCULUM
           </a>
-          <a
-            class="circle"
-            href="https://wa.me/+543512780528"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src="/media/icon-wpp.png" alt="imgWpp" class="icono wsp" />
-          </a>
-          <a
-            class="circle"
-            href="https://www.linkedin.com/in/lautaro-quiroga/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img src="media/icon-linkedin.png" alt="linkedin" class="icono" />
-          </a>
+          <div class="wsp-linkedin">
+            <a
+              class="circle"
+              href="https://wa.me/+543512780528"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                loading="lazy"
+                src="/media/icon-wpp.png"
+                alt="imgWpp"
+                class="icono wsp"
+              />
+            </a>
+            <a
+              class="circle"
+              href="https://www.linkedin.com/in/lautaro-quiroga/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                loading="lazy"
+                src="media/icon-linkedin.png"
+                alt="linkedin"
+                class="icono"
+              />
+            </a>
+          </div>
         </div>
       </div>
 
       <div class="fotoContainer">
         <div>
-          <img class="camisa" src="/media/camisa.png" alt="camisa" />
+          <img
+            loading="lazy"
+            class="camisa"
+            src="/media/camisa.png"
+            alt="camisa"
+          />
         </div>
       </div>
     </section>
@@ -180,6 +199,7 @@
       <div class="cardsTecno">
         <div class="cardTecno">
           <img
+            loading="lazy"
             class="logoTecno html"
             src="/media/logo-html.png"
             alt="Logo - HTML"
@@ -191,6 +211,7 @@
 
         <div class="cardTecno">
           <img
+            loading="lazy"
             class="logoTecno css"
             src="/media/icon-css.png"
             alt="Logo - CSS3"
@@ -201,7 +222,12 @@
         </div>
 
         <div class="cardTecno">
-          <img class="logoTecno scss" src="/media/sass.png" alt="Logo - SCSS" />
+          <img
+            loading="lazy"
+            class="logoTecno scss"
+            src="/media/sass.png"
+            alt="Logo - SCSS"
+          />
           <div class="">
             <p>SCSS</p>
           </div>
@@ -209,6 +235,7 @@
 
         <div class="cardTecno">
           <img
+            loading="lazy"
             class="logoTecno js"
             src="/media/icon-js.png"
             alt="Logo - JavaScript"
@@ -220,6 +247,7 @@
 
         <div class="cardTecno">
           <img
+            loading="lazy"
             class="logoTecno react"
             src="/media/icon-React.png"
             alt="Logo - React"
@@ -231,6 +259,7 @@
 
         <div class="cardTecno">
           <img
+            loading="lazy"
             class="logoTecno git"
             src="/media/icon-git.png"
             alt="Logo - Git"
@@ -242,6 +271,7 @@
 
         <div class="cardTecno">
           <img
+            loading="lazy"
             class="logoTecno wordpress"
             src="/media/wordpress.png"
             alt="Logo - WordPress"
@@ -253,6 +283,7 @@
 
         <div class="cardTecno">
           <img
+            loading="lazy"
             class="logoTecno"
             src="/media/Elementor.png"
             alt="Logo - Elementor"
@@ -270,9 +301,14 @@
         <h1>Mis trabajos destacados con código</h1>
         <div class="cards_container--proyectos">
           <div class="cards--proyectos card_portafolio">
-            <video class="video" controls>
-              <source src="media/quickbites2.mp4" type="video/mp4" />
-            </video>
+            <video
+              class="video"
+              src="media/quickbites2.mp4"
+              type="video/mp4"
+              poster="media/quickbites.jpg"
+              controls
+            ></video>
+            <div class="poster-overlay"></div>
             <div class="container_textCard--proyectos">
               <div class="cardTexto">
                 <h2 data-value="title-proyecto2">
@@ -298,6 +334,7 @@
           >
             <div class="container_imgCard--proyectos">
               <img
+                loading="lazy"
                 src="media/fenix-trading.png"
                 alt="Proyecto: Fenix Trading"
               />
@@ -327,7 +364,11 @@
             class="cards--proyectos card_portafolio"
           >
             <div class="container_imgCard--proyectos">
-              <img src="media/cotizador.png" alt="Proyecto: cotizador" />
+              <img
+                loading="lazy"
+                src="media/cotizador.png"
+                alt="Proyecto: cotizador"
+              />
             </div>
 
             <div class="container_textCard--proyectos">
@@ -358,7 +399,12 @@
             class="cards--proyectos card_portafolio"
           >
             <div class="container_imgCard--proyectos">
-              <img src="media/quiero-ushuaia.png"Proyecto: Quiero Ushuaia" />
+              <img
+                loading="lazy"
+                src="media/quiero-ushuaia.png"
+                alt="Quiero
+              Ushuaia"
+              />
             </div>
 
             <div class="container_textCard--proyectos">
@@ -387,6 +433,7 @@
           >
             <div class="container_imgCard--proyectos">
               <img
+                loading="lazy"
                 src="media/por-la-gloria.png"
                 alt="Proyecto: Por La Gloria"
               />
@@ -414,7 +461,11 @@
             class="cards--proyectos card_portafolio"
           >
             <div class="container_imgCard--proyectos">
-              <img src="media/tedx.png" alt="Proyecto: La Comunidad TEDX" />
+              <img
+                loading="lazy"
+                src="media/tedx.png"
+                alt="Proyecto: La Comunidad TEDX"
+              />
             </div>
             <div class="container_textCard--proyectos">
               <div class="cardTexto">
@@ -448,7 +499,12 @@
             target="_blank"
             rel="noreferrer"
           >
-            <img src="media/icon-wpp.png" alt="imgWpp" class="icono wsp" />
+            <img
+              loading="lazy"
+              src="media/icon-wpp.png"
+              alt="imgWpp"
+              class="icono wsp"
+            />
           </a>
           <a
             class="circle"
@@ -456,7 +512,12 @@
             target="_blank"
             rel="noreferrer"
           >
-            <img src="media/icon-linkedin.png" alt="linkedin" class="icono" />
+            <img
+              loading="lazy"
+              src="media/icon-linkedin.png"
+              alt="linkedin"
+              class="icono"
+            />
           </a>
         </div>
 

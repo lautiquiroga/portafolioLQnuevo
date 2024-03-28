@@ -8,12 +8,13 @@ $magentaFuerte: #ff0059;
 $fondoClaro: #f2f2f2;
 $grisClaro: #e7e7e7;
 $grisOscuro: #808080;
-$tituloSize: 2.5vw;
-$tituloSizeResp: 7vw;
+$tituloSize: 35px;
+$tituloSizeResp: 30px;
 $descrSize: 18px;
-$descrSizeResp: 4.2vw;
 $descrLineHeight: 150%;
 $light: 300;
+$white: #c9b9d3;
+$jet: #131520;
 
 @mixin center {
   display: flex;
@@ -84,18 +85,14 @@ html::-webkit-scrollbar-thumb {
   /* Borde redondeado del pulgar */
 }
 
-////////////// Navbar
+////////////// Header
 
-.navContainer {
+header {
   width: 100%;
   position: fixed;
   z-index: 9999;
   padding: 1% 0;
-
-  &.headerBlack {
-    background-color: rgba(13, 13, 13, 0.742);
-    backdrop-filter: blur(2px);
-  }
+  background-color: transparent;
 
   .navbar {
     --bs-navbar-padding-y: none;
@@ -145,10 +142,15 @@ html::-webkit-scrollbar-thumb {
   box-shadow: 0px 0px 0.8rem 0px rgba(0, 0, 0, 0.207);
 }
 
-// Celulares vertical
-@media only screen and (max-width: 991px) {
-  .navContainer {
+// Responsive según bootstrap
+@media (max-width: 991px) {
+  header {
     min-height: 5vh;
+
+    @media(max-width: 767px) {
+      background-color: rgba(13, 13, 13, 0.742) !important;
+      backdrop-filter: blur(2px) !important;
+    }
 
     .navbar {
       .containNav {
@@ -228,7 +230,7 @@ body {
       rgba(223, 233, 254, 1) 100%);
 }
 
-@media(max-width:767px) {
+@media(max-width:1199px) {
   body {
     overflow-x: hidden;
     background: linear-gradient(180deg,
@@ -254,11 +256,11 @@ body {
   justify-content: space-around;
   //box-shadow: 0px 0px 0.8rem 0px rgb(44, 131, 189);
   box-shadow: 0px 0px 0.8rem 0px rgb(12, 30, 43);
-  border-radius: 0 0 4vw 4vw;
-  -webkit-border-radius: 0 0 4vw 4vw;
-  -moz-border-radius: 0 0 4vw 4vw;
-  -ms-border-radius: 0 0 4vw 4vw;
-  -o-border-radius: 0 0 4vw 4vw;
+  border-radius: 0 0 20px 20px;
+  -webkit-border-radius: 0 0 20px 20px;
+  -moz-border-radius: 0 0 20px 20px;
+  -ms-border-radius: 0 0 20px 20px;
+  -o-border-radius: 0 0 20px 20px;
 
   .textoInicio {
     width: 52vw;
@@ -293,54 +295,58 @@ body {
       }
     }
 
-    .button-inicio {
-      //@includebotones:;
-      text-decoration: none;
-      transition: all 0.3s;
-      font-weight: $light;
-      background-color: rgb(44, 131, 189);
-      color: black;
-      font-weight: 500;
-      font-size: $descrSize;
-      padding: 0.8vw 2vw;
-      border-radius: 0.8vw;
-      -webkit-border-radius: 0.8vw;
-      -moz-border-radius: 0.8vw;
-      -ms-border-radius: 0.8vw;
-      -o-border-radius: 0.8vw;
+    .btnsInicio {
+      display: flex;
+      gap: 20px;
 
-      &.cv {
-        margin-left: 2vw;
+      .button-inicio {
+        text-decoration: none;
+        transition: all 0.3s;
+        font-weight: $light;
+        background-color: rgb(44, 131, 189);
+        color: black;
+        font-weight: 500;
+        font-size: $descrSize;
+        padding: 10px 20px;
+        border-radius: 0.8vw;
+        -webkit-border-radius: 0.8vw;
+        -moz-border-radius: 0.8vw;
+        -ms-border-radius: 0.8vw;
+        -o-border-radius: 0.8vw;
+        width: 150px;
+        text-align: center;
+
+        &:hover {
+          background: #353c5c;
+          color: white;
+          transition: all 0.4s ease;
+        }
       }
 
-      &:hover {
-        background: #353c5c;
-        color: white;
-        transition: all 0.4s ease;
+      .circle {
+        opacity: 0.7;
+        transition: all 0.3s;
+        text-decoration: none;
+
+        @media (max-width: 1199px) {
+          display: none;
+        }
+
+        .icono {
+          height: 2.5vw;
+        }
+
+        .wsp {
+          margin: 0 1rem 0 2rem;
+        }
+      }
+
+      .circle:hover {
+        opacity: 1;
       }
     }
 
-    .circle {
-      opacity: 0.7;
-      transition: all 0.3s;
-      text-decoration: none;
 
-      @media (max-width: 1199px) {
-        display: none;
-      }
-
-      .icono {
-        height: 2.5vw;
-      }
-
-      .wsp {
-        margin: 0 1rem 0 2rem;
-      }
-    }
-
-    .circle:hover {
-      opacity: 1;
-    }
   }
 
   .fotoContainer {
@@ -367,23 +373,16 @@ body {
 
   .contenedorSpline {
     position: relative;
-    // border: 1px solid red;
     width: 50vw;
     @include center;
-
-    @media (max-width: 1199px) {
-      width: 40vw;
-    }
 
     .splineContainer {
       width: 100%;
       height: 40vw;
-      // border: 1px solid rgb(0, 255, 34);
     }
   }
 
   .textSobremi {
-    // border: 1px solid red;
     width: 50vw;
     @include centerCol;
     align-items: flex-start;
@@ -426,11 +425,11 @@ body {
   padding: 7% 20%;
   @include centerCol;
   box-shadow: 0px 0px 0.8rem 0px rgb(12, 30, 43);
-  border-radius: 4vw;
-  -webkit-border-radius: 4vw;
-  -moz-border-radius: 4vw;
-  -ms-border-radius: 4vw;
-  -o-border-radius: 4vw;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
 
   .titulo-tecno {
     color: rgb(44, 131, 189);
@@ -505,57 +504,7 @@ body {
   }
 }
 
-@media(max-width:767px) {
-  .inicio {
-    padding: 6vh 20px 0 20px;
-
-    .textoInicio {
-      width: 100%;
-      padding: 0;
-      text-align: center;
-
-      .hola {
-        font-size: 6vw;
-      }
-
-      .titulo-inicio {
-        margin-bottom: 2vh;
-        font-size: 16vw;
-      }
-
-      .descr-inicio {
-        font-size: 20px;
-      }
-
-      .btnsInicio {
-        margin: 2vh 0;
-        display: flex;
-        justify-content: space-evenly;
-
-        .button-inicio {
-          font-size: $descrSizeResp;
-          padding: 2vw;
-          text-align: center;
-          width: 38vw;
-          border-radius: 2vw;
-          -webkit-border-radius: 2vw;
-          -moz-border-radius: 2vw;
-          -ms-border-radius: 2vw;
-          -o-border-radius: 2vw;
-        }
-      }
-    }
-
-    .fotoContainer {
-      margin-left: 5%;
-
-      .camisa {
-        height: 40vh;
-        width: auto;
-      }
-    }
-  }
-
+@media(max-width: 1199px) {
   .sobremi {
     flex-direction: column-reverse;
     align-items: center;
@@ -567,29 +516,101 @@ body {
       text-align: center;
       width: 100%;
       padding: 0;
+    }
 
-      .titulo-sobremi {
-        margin-bottom: 8%;
-        font-size: $tituloSizeResp;
+    .contenedorSpline {
+      width: 200px;
+
+      .splineContainer {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+}
+
+@media(max-width:767px) {
+  .inicio {
+    padding: 60px 20px 0 20px;
+    gap: 40px;
+
+    .textoInicio {
+      width: 100%;
+      padding: 0;
+      text-align: center;
+      @include centerCol();
+      gap: 30px;
+
+      .hola {
+        font-size: 22px;
       }
 
-      .descr-sobremi {
-        font-size: $descrSizeResp;
+      .titulo-inicio {
+        margin-bottom: 0;
+        font-size: 60px;
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+
+      .descr-inicio {
+        font-size: $descrSize;
+        max-width: 400px;
+        margin: 0;
+      }
+
+      .btnsInicio {
+
+        .button-inicio {
+          font-size: $descrSize;
+          width: 160px;
+          border-radius: 10px;
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          -ms-border-radius: 10px;
+          -o-border-radius: 10px;
+        }
+
+        .wsp-linkedin {
+          display: none;
+        }
+      }
+    }
+
+    .fotoContainer {
+      margin-left: 5%;
+
+      .camisa {
+        // height: 40vh;
+        // width: auto;
+        width: 250px;
+      }
+    }
+  }
+
+  .sobremi {
+
+    .textSobremi {
+      @include centerCol;
+      text-align: center;
+
+      .titulo-sobremi {
+        margin-bottom: 20px;
+        font-size: $tituloSizeResp;
       }
     }
   }
 
   .tecnologias {
-    padding: 12% 7%;
-    border-radius: 8vw;
-    -webkit-border-radius: 8vw;
-    -moz-border-radius: 8vw;
-    -ms-border-radius: 8vw;
-    -o-border-radius: 8vw;
+    padding: 60px 12px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 
     .titulo-tecno {
       font-size: $tituloSizeResp;
-      margin-bottom: 15%;
+      margin-bottom: 40px;
     }
 
     .cardsTecno {
@@ -603,11 +624,11 @@ body {
       .cardTecno {
         width: 35vw;
         height: 50vw;
-        border-radius: 4vw;
-        -webkit-border-radius: 4vw;
-        -moz-border-radius: 4vw;
-        -ms-border-radius: 4vw;
-        -o-border-radius: 4vw;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
 
         .logoTecno {
           width: 20vw;
@@ -645,7 +666,7 @@ body {
         }
 
         p {
-          font-size: 4vw;
+          font-size: 20px;
           font-weight: 400;
           margin: 0;
         }
@@ -655,7 +676,10 @@ body {
 }
 
 
+
 ////////////// Proyectos
+
+
 #proyectos {
   width: 100%;
   height: auto;
@@ -687,42 +711,30 @@ body {
       background-color: $eerie-black;
       box-shadow: 0 10px 16px -6px rgb(5 5 5 / 30%),
         0 25px 10px -24px rgb(5 5 5 / 10%);
-      width: 450px;
+      width: 440px;
       display: flex;
       flex-direction: column;
       z-index: 1;
-      border-radius: 2vw;
-      -webkit-border-radius: 2vw;
-      -moz-border-radius: 2vw;
-      -ms-border-radius: 2vw;
-      -o-border-radius: 2vw;
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      -o-border-radius: 20px;
+      overflow: hidden;
 
       .video {
         height: 250px;
-        border-radius: 2vw 2vw 0 0;
-        -webkit-border-radius: 2vw 2vw 0 0;
-        -moz-border-radius: 2vw 2vw 0 0;
-        -ms-border-radius: 2vw 2vw 0 0;
-        -o-border-radius: 2vw 2vw 0 0;
         cursor: pointer;
+        object-position: top center;
       }
 
       .container_imgCard--proyectos {
-        border-radius: 2vw 2vw 0 0;
-        -webkit-border-radius: 2vw 2vw 0 0;
-        -moz-border-radius: 2vw 2vw 0 0;
-        -ms-border-radius: 2vw 2vw 0 0;
-        -o-border-radius: 2vw 2vw 0 0;
 
         img {
           width: 100%;
-          border-radius: 2vw 2vw 0 0;
-          -webkit-border-radius: 2vw 2vw 0 0;
-          -moz-border-radius: 2vw 2vw 0 0;
-          -ms-border-radius: 2vw 2vw 0 0;
-          -o-border-radius: 2vw 2vw 0 0;
           height: 250px;
           object-fit: cover;
+          object-position: top center;
         }
       }
 
@@ -734,7 +746,7 @@ body {
         justify-content: space-between;
         width: 100%;
         // height: auto;
-        min-height: 370px;
+        min-height: 340px;
 
         .cardTexto {
           display: flex;
@@ -782,52 +794,15 @@ body {
     }
 
     .cards_container--proyectos {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 10vw;
+      gap: 30px;
 
       .cards--proyectos {
-        background-color: $eerie-black;
-        box-shadow: 0 10px 16px -6px rgb(5 5 5 / 30%),
-          0 25px 10px -24px rgb(5 5 5 / 10%);
-        max-width: 100%;
-        display: flex;
-        flex-direction: column;
-        z-index: 1;
-        border-radius: 4vw;
-        -webkit-border-radius: 4vw;
-        -moz-border-radius: 4vw;
-        -ms-border-radius: 4vw;
-        -o-border-radius: 4vw;
         height: fit-content;
 
-        .video {
-          height: 50vw;
-          cursor: pointer;
-          border-radius: 4vw 4vw 0 0;
-          -webkit-border-radius: 4vw 4vw 0 0;
-          -moz-border-radius: 4vw 4vw 0 0;
-          -ms-border-radius: 4vw 4vw 0 0;
-          -o-border-radius: 4vw 4vw 0 0;
-        }
-
         .container_imgCard--proyectos {
-          border-radius: 2vw 2vw 0 0;
-          -webkit-border-radius: 2vw 2vw 0 0;
-          -moz-border-radius: 2vw 2vw 0 0;
-          -ms-border-radius: 2vw 2vw 0 0;
-          -o-border-radius: 2vw 2vw 0 0;
 
           img {
             width: 100%;
-            border-radius: 4vw 4vw 0 0;
-            -webkit-border-radius: 4vw 4vw 0 0;
-            -moz-border-radius: 4vw 4vw 0 0;
-            -ms-border-radius: 4vw 4vw 0 0;
-            -o-border-radius: 4vw 4vw 0 0;
             height: 50vw;
             object-fit: cover;
           }
@@ -853,7 +828,7 @@ body {
             }
 
             p {
-              font-size: $descrSizeResp;
+              font-size: $descrSize;
             }
 
             .naranja {
@@ -873,10 +848,9 @@ body {
 
               button {
                 @include center;
-                border-radius: 2vw;
                 letter-spacing: 0.1vw;
                 font-weight: 700;
-                font-size: 4vw;
+                font-size: 20px;
                 padding: 1vw 0;
                 width: 30vw;
                 background-color: rgb(44, 131, 189);
@@ -919,25 +893,17 @@ body {
 
 ///////////// Contacto
 
-/* Variables */
-$white: #c9b9d3;
-$light-grey: #aaa4da;
-$beaver: rgb(93, 111, 187);
-$black: #404258;
-$eerie-black: #141824;
-$jet: #131520;
-
 #contacto {
   background-color: rgb(13, 13, 13);
   width: 100%;
   padding: 7% 25%;
   height: auto;
   box-shadow: 0px 0px 0.8rem 0px rgb(12, 30, 43);
-  border-radius: 4vw;
-  -webkit-border-radius: 4vw;
-  -moz-border-radius: 4vw;
-  -ms-border-radius: 4vw;
-  -o-border-radius: 4vw;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
 
   h1 {
     display: block;
@@ -993,7 +959,7 @@ $jet: #131520;
     }
 
     .form-contact {
-      margin-top: 2vw;
+      margin-top: 20px;
 
       input,
       textarea {
@@ -1041,7 +1007,7 @@ $jet: #131520;
         button {
           background: rgb(44, 131, 189);
           border: none;
-          padding: 0.8vw 2vw;
+          padding: 0.8vw 20px;
           border-radius: 0.8vw;
           -webkit-border-radius: 0.8vw;
           -moz-border-radius: 0.8vw;
@@ -1136,16 +1102,16 @@ $jet: #131520;
         margin-top: 10%;
         background-color: rgb(195, 244, 204);
         color: green;
-        padding: 2vw 4vw;
-        border-radius: 4vw;
-        -webkit-border-radius: 4vw;
-        -moz-border-radius: 4vw;
-        -ms-border-radius: 4vw;
-        -o-border-radius: 4vw;
+        padding: 20px 20px;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
 
         p {
           margin: 0;
-          font-size: $descrSizeResp;
+          font-size: $descrSize;
           font-weight: 500;
         }
       }
@@ -1161,9 +1127,9 @@ $jet: #131520;
           border: 1px solid $eerie-black;
           width: 100%;
           padding: 3vw;
-          border-radius: 4vw;
+          border-radius: 20px;
           color: $white;
-          font-size: $descrSizeResp;
+          font-size: $descrSize;
           outline: none;
           letter-spacing: 1px;
           resize: none;
@@ -1200,14 +1166,14 @@ $jet: #131520;
           button {
             background: rgb(44, 131, 189);
             border: none;
-            padding: 0.8vw 5vw;
-            border-radius: 2vw;
-            -webkit-border-radius: 2vw;
-            -moz-border-radius: 2vw;
-            -ms-border-radius: 2vw;
-            -o-border-radius: 2vw;
+            padding: 10px 20px;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
             color: black;
-            font-size: $descrSizeResp;
+            font-size: $descrSize;
             letter-spacing: 1px;
             cursor: pointer;
             transition: 1s all;
@@ -1274,7 +1240,7 @@ $jet: #131520;
     padding: 5% 0;
 
     .p1 {
-      font-size: $descrSizeResp;
+      font-size: $descrSize;
     }
 
     .p2 {
