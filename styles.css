@@ -1014,13 +1014,10 @@ body {
   font-size: 0.8vw;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1199px) {
   #footer {
     color: rgb(0, 0, 0);
     padding: 5% 0;
-  }
-  #footer .p1 {
-    font-size: 18px;
   }
   #footer .p2 {
     font-size: 3vw;
