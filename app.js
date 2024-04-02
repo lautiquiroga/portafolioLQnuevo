@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var navbarToggler = document.querySelector('.navbar-toggler');
     var header = document.querySelector('header');
 
+    highlightNavLink();
+    headerBackground();
+    ocultarSpline();
+
     // Función para agregar o quitar la clase 'active' según la posición de la ventana
     function highlightNavLink() {
         const sections = document.querySelectorAll('section[id]');
@@ -30,7 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function headerBackground() {
-        if (window.scrollY === 0 && navbarToggler.classList.contains('collapsed')) {
+        var ariaExpanded = navbarToggler.getAttribute('aria-expanded');
+        if (window.scrollY === 0 && ariaExpanded === "false") {
             header.classList.remove('headerBlack');
         } else {
             header.classList.add('headerBlack');

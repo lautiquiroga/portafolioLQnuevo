@@ -73,7 +73,13 @@ header .navbar .navbar-nav .nav-link.active {
 
 @media (max-width: 991px) {
   header {
-    min-height: 5vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+  }
+  header .navbar .container-fluid {
+    padding: 10px;
   }
   header .navbar .containNav {
     display: flex;
@@ -90,6 +96,7 @@ header .navbar .navbar-nav .nav-link.active {
     margin-right: 0;
     filter: invert(100%);
     -webkit-filter: invert(100%);
+    padding: 0;
   }
   header .navbar .containNav .navbar-toggler:focus {
     box-shadow: none;
@@ -153,11 +160,11 @@ body {
   flex-wrap: wrap;
   justify-content: space-around;
   box-shadow: 0px 0px 0.8rem 0px rgb(12, 30, 43);
-  border-radius: 0 0 20px 20px;
-  -webkit-border-radius: 0 0 20px 20px;
-  -moz-border-radius: 0 0 20px 20px;
-  -ms-border-radius: 0 0 20px 20px;
-  -o-border-radius: 0 0 20px 20px;
+  border-radius: 0 0 60px 60px;
+  -webkit-border-radius: 0 0 60px 60px;
+  -moz-border-radius: 0 0 60px 60px;
+  -ms-border-radius: 0 0 60px 60px;
+  -o-border-radius: 0 0 60px 60px;
 }
 .inicio .textoInicio {
   width: 52vw;
@@ -280,7 +287,7 @@ body {
 }
 .sobremi .textSobremi .titulo-sobremi {
   color: white;
-  margin-bottom: 5%;
+  margin-bottom: 40px;
   font-size: 35px;
   line-height: 1;
 }
@@ -308,17 +315,17 @@ body {
   justify-content: center;
   align-items: center;
   box-shadow: 0px 0px 0.8rem 0px rgb(12, 30, 43);
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
+  border-radius: 60px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
 }
 .tecnologias .titulo-tecno {
   color: rgb(44, 131, 189);
   font-size: 35px;
   line-height: 1;
-  margin-bottom: 5%;
+  margin-bottom: 50px;
 }
 .tecnologias .cardsTecno {
   width: 100%;
@@ -380,6 +387,15 @@ body {
 }
 
 @media (max-width: 1199px) {
+  .inicio .textoInicio .hola {
+    font-size: 25px;
+  }
+  .inicio .textoInicio .titulo-inicio {
+    font-size: 50px;
+  }
+  .inicio .textoInicio .descr-inicio {
+    font-size: 18px;
+  }
   .sobremi {
     flex-direction: column-reverse;
     align-items: center;
@@ -407,6 +423,11 @@ body {
   .inicio {
     padding: 60px 20px 0 20px;
     gap: 40px;
+    border-radius: 0 0 8vw 8vw;
+    -webkit-border-radius: 0 0 8vw 8vw;
+    -moz-border-radius: 0 0 8vw 8vw;
+    -ms-border-radius: 0 0 8vw 8vw;
+    -o-border-radius: 0 0 8vw 8vw;
   }
   .inicio .textoInicio {
     width: 100%;
@@ -458,16 +479,16 @@ body {
     text-align: center;
   }
   .sobremi .textSobremi .titulo-sobremi {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     font-size: 30px;
   }
   .tecnologias {
     padding: 60px 12px;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+    border-radius: 8vw;
+    -webkit-border-radius: 8vw;
+    -moz-border-radius: 8vw;
+    -ms-border-radius: 8vw;
+    -o-border-radius: 8vw;
   }
   .tecnologias .titulo-tecno {
     font-size: 30px;
@@ -531,7 +552,7 @@ body {
   padding: 100px 20px 100px 20px;
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 80px;
 }
 #proyectos h1 {
   display: block;
@@ -539,8 +560,8 @@ body {
   color: rgb(255, 255, 255);
   font-size: 35px;
   letter-spacing: 0.1vw;
-  padding-bottom: 50px;
-  line-height: 1;
+  line-height: 1.2;
+  margin-bottom: 50px;
 }
 #proyectos .cards_container--proyectos {
   display: flex;
@@ -592,6 +613,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  text-align: center;
 }
 #proyectos .cards_container--proyectos .cards--proyectos .container_textCard--proyectos .cardTexto h2 {
   letter-spacing: 0.1vw;
@@ -599,20 +621,28 @@ body {
   color: #c9b9d3;
   display: inline;
   line-height: 1;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
 }
 #proyectos .cards_container--proyectos .cards--proyectos .container_textCard--proyectos .cardTexto p {
   color: #c9b9d3;
   font-size: 18px;
   font-weight: 400;
   line-height: 150%;
-  margin-top: 1vw;
-  margin-bottom: 0;
+  margin: 0;
 }
 #proyectos .cards_container--proyectos .cards--proyectos .container_textCard--proyectos .cardTexto .naranja {
   color: #fbb03b;
   font-weight: 700;
 }
 
+@media (max-width: 1199px) {
+  #proyectos {
+    padding: 80px 12px;
+    gap: 60px;
+  }
+}
 @media (max-width: 767px) {
   #proyectos {
     padding: 80px 12px;
@@ -620,9 +650,8 @@ body {
   }
   #proyectos h1 {
     text-align: center;
-    color: black;
     font-size: 30px;
-    padding-bottom: 30px;
+    margin-bottom: 40px;
   }
   #proyectos .cards_container--proyectos {
     gap: 30px;
@@ -648,13 +677,8 @@ body {
     height: -moz-fit-content;
     height: fit-content;
   }
-  #proyectos .cards_container--proyectos .cards--proyectos .container_textCard--proyectos .cardTexto {
-    text-align: center;
-  }
   #proyectos .cards_container--proyectos .cards--proyectos .container_textCard--proyectos .cardTexto h2 {
-    font-size: 5vw;
-    text-align: center;
-    width: 100%;
+    font-size: 22px;
   }
   #proyectos .cards_container--proyectos .cards--proyectos .container_textCard--proyectos .cardTexto p {
     font-size: 18px;
@@ -713,11 +737,11 @@ body {
   padding: 7% 25%;
   height: auto;
   box-shadow: 0px 0px 0.8rem 0px rgb(12, 30, 43);
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
+  border-radius: 60px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
 }
 #contacto h1 {
   display: block;

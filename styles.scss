@@ -152,9 +152,16 @@ header {
 // Responsive según bootstrap
 @media (max-width: 991px) {
   header {
-    min-height: 5vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
 
     .navbar {
+      .container-fluid {
+        padding: 10px;
+      }
+
       .containNav {
         display: flex;
         justify-content: flex-end;
@@ -172,6 +179,7 @@ header {
           margin-right: 0;
           filter: invert(100%);
           -webkit-filter: invert(100%);
+          padding: 0;
         }
 
         .navbar-toggler:focus {
@@ -256,11 +264,11 @@ body {
   justify-content: space-around;
   //box-shadow: 0px 0px 0.8rem 0px rgb(44, 131, 189);
   box-shadow: 0px 0px 0.8rem 0px rgb(12, 30, 43);
-  border-radius: 0 0 20px 20px;
-  -webkit-border-radius: 0 0 20px 20px;
-  -moz-border-radius: 0 0 20px 20px;
-  -ms-border-radius: 0 0 20px 20px;
-  -o-border-radius: 0 0 20px 20px;
+  border-radius: 0 0 60px 60px;
+  -webkit-border-radius: 0 0 60px 60px;
+  -moz-border-radius: 0 0 60px 60px;
+  -ms-border-radius: 0 0 60px 60px;
+  -o-border-radius: 0 0 60px 60px;
 
   .textoInicio {
     width: 52vw;
@@ -395,7 +403,7 @@ body {
 
     .titulo-sobremi {
       color: white;
-      margin-bottom: 5%;
+      margin-bottom: 40px;
       font-size: $tituloSize;
       line-height: 1;
     }
@@ -425,17 +433,17 @@ body {
   padding: 7% 20%;
   @include centerCol;
   box-shadow: 0px 0px 0.8rem 0px rgb(12, 30, 43);
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
+  border-radius: 60px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
 
   .titulo-tecno {
     color: rgb(44, 131, 189);
     font-size: $tituloSize;
     line-height: 1;
-    margin-bottom: 5%;
+    margin-bottom: 50px;
   }
 
   .cardsTecno {
@@ -505,6 +513,23 @@ body {
 }
 
 @media(max-width: 1199px) {
+  .inicio {
+    .textoInicio {
+
+      .hola {
+        font-size: 25px;
+      }
+
+      .titulo-inicio {
+        font-size: 50px;
+      }
+
+      .descr-inicio {
+        font-size: $descrSize;
+      }
+    }
+  }
+
   .sobremi {
     flex-direction: column-reverse;
     align-items: center;
@@ -533,6 +558,11 @@ body {
   .inicio {
     padding: 60px 20px 0 20px;
     gap: 40px;
+    border-radius: 0 0 8vw 8vw;
+    -webkit-border-radius: 0 0 8vw 8vw;
+    -moz-border-radius: 0 0 8vw 8vw;
+    -ms-border-radius: 0 0 8vw 8vw;
+    -o-border-radius: 0 0 8vw 8vw;
 
     .textoInicio {
       width: 100%;
@@ -594,7 +624,7 @@ body {
       text-align: center;
 
       .titulo-sobremi {
-        margin-bottom: 20px;
+        margin-bottom: 40px;
         font-size: $tituloSizeResp;
       }
     }
@@ -602,11 +632,11 @@ body {
 
   .tecnologias {
     padding: 60px 12px;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+    border-radius: 8vw;
+    -webkit-border-radius: 8vw;
+    -moz-border-radius: 8vw;
+    -ms-border-radius: 8vw;
+    -o-border-radius: 8vw;
 
     .titulo-tecno {
       font-size: $tituloSizeResp;
@@ -686,7 +716,7 @@ body {
   padding: 100px 20px 100px 20px;
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 80px;
 
   h1 {
     display: block;
@@ -694,8 +724,8 @@ body {
     color: rgb(255, 255, 255);
     font-size: $tituloSize;
     letter-spacing: 0.1vw;
-    padding-bottom: 50px;
-    line-height: 1;
+    line-height: 1.2;
+    margin-bottom: 50px;
   }
 
   .cards_container--proyectos {
@@ -752,6 +782,7 @@ body {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
+          text-align: center;
 
           h2 {
             letter-spacing: 0.1vw;
@@ -759,6 +790,9 @@ body {
             color: $white;
             display: inline;
             line-height: 1;
+            margin-bottom: 20px;
+            width: 100%;
+            text-align: center;
           }
 
           p {
@@ -766,8 +800,7 @@ body {
             font-size: 18px;
             font-weight: 400;
             line-height: $descrLineHeight;
-            margin-top: 1vw;
-            margin-bottom: 0;
+            margin: 0;
           }
 
           .naranja {
@@ -780,17 +813,22 @@ body {
   }
 }
 
-@media(max-width:767px) {
+@media(max-width:1199px) {
+  #proyectos {
+    padding: 80px 12px;
+    gap: 60px;
+  }
+}
 
+@media(max-width:767px) {
   #proyectos {
     padding: 80px 12px;
     gap: 60px;
 
     h1 {
       text-align: center;
-      color: black;
       font-size: $tituloSizeResp;
-      padding-bottom: 30px;
+      margin-bottom: 40px;
     }
 
     .cards_container--proyectos {
@@ -819,12 +857,8 @@ body {
           height: fit-content;
 
           .cardTexto {
-            text-align: center;
-
             h2 {
-              font-size: 5vw;
-              text-align: center;
-              width: 100%;
+              font-size: 22px;
             }
 
             p {
@@ -899,11 +933,11 @@ body {
   padding: 7% 25%;
   height: auto;
   box-shadow: 0px 0px 0.8rem 0px rgb(12, 30, 43);
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
+  border-radius: 60px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
 
   h1 {
     display: block;
@@ -1049,7 +1083,6 @@ body {
 @media(max-width:767px) {
   #contacto {
     background-color: rgb(13, 13, 13);
-
     width: 100%;
     padding: 12% 7%;
     min-height: 80vh;
