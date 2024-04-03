@@ -224,7 +224,7 @@ header .navbar .navbar-nav .nav-link.active {
 #tecnologias {
   background-color: rgb(13, 13, 13);
   height: auto;
-  padding: 7% 20%;
+  padding: 100px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -249,7 +249,8 @@ header .navbar .navbar-nav .nav-link.active {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 3vw;
+  gap: 40px;
+  max-width: 900px;
 }
 #tecnologias .cardsTecno .cardTecno {
   display: flex;
@@ -257,47 +258,28 @@ header .navbar .navbar-nav .nav-link.active {
   justify-content: center;
   align-items: center;
   justify-content: space-evenly;
-  width: 11vw;
-  height: 13vw;
+  width: 170px;
+  height: 220px;
   background-color: #101725;
   color: white;
-  border-radius: 1vw;
-  -webkit-border-radius: 1vw;
-  -moz-border-radius: 1vw;
-  -ms-border-radius: 1vw;
-  -o-border-radius: 1vw;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
 }
 #tecnologias .cardsTecno .cardTecno .logoTecno {
-  width: 6vw;
-  height: 6vw;
-}
-#tecnologias .cardsTecno .cardTecno .html {
-  width: 6vw;
-  height: 6vw;
-}
-#tecnologias .cardsTecno .cardTecno .css {
-  width: 7.5vw;
-  height: 7.5vw;
-  margin-top: -8%;
-}
-#tecnologias .cardsTecno .cardTecno .js {
-  width: 7vw;
-  height: 7vw;
-  margin-top: -8%;
+  width: 100px;
+  height: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 #tecnologias .cardsTecno .cardTecno .scss {
-  width: 6.5vw;
-  height: 6.5vw;
-  margin-top: -5%;
   filter: invert(100%);
   -webkit-filter: invert(100%);
 }
-#tecnologias .cardsTecno .cardTecno .react {
-  width: 7vw;
-  height: 6vw;
-}
 #tecnologias .cardsTecno .cardTecno p {
-  font-size: 1.5vw;
+  font-size: 18px;
   font-weight: 400;
   margin: 0;
 }
@@ -639,9 +621,30 @@ footer .p3 {
     width: 200px;
     height: 200px;
   }
+  #tecnologias {
+    padding: 80px 20px;
+  }
+  #tecnologias .cardsTecno {
+    max-width: 800px;
+    gap: 20px;
+  }
+  #tecnologias .cardsTecno .cardTecno {
+    width: 150px;
+    height: 180px;
+  }
+  #tecnologias .cardsTecno .cardTecno .logoTecno {
+    width: 80px;
+    height: 80px;
+  }
   #proyectos {
-    padding: 80px 12px;
+    padding: 60px 12px;
     gap: 60px;
+  }
+  #proyectos h1 {
+    max-width: 450px;
+    align-self: center;
+    margin: auto;
+    padding-bottom: 40px;
   }
   footer {
     color: rgb(0, 0, 0);
@@ -693,7 +696,7 @@ footer .p3 {
     font-size: 30px;
   }
   #tecnologias {
-    padding: 60px 12px;
+    padding: 80px 12px;
     border-radius: 8vw;
     -webkit-border-radius: 8vw;
     -moz-border-radius: 8vw;
@@ -704,53 +707,9 @@ footer .p3 {
     font-size: 30px;
     margin-bottom: 40px;
   }
-  #tecnologias .cardsTecno {
-    gap: 8vw;
-  }
-  #tecnologias .cardsTecno .cardTecno {
-    width: 35vw;
-    height: 50vw;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
-  }
-  #tecnologias .cardsTecno .cardTecno .logoTecno {
-    width: 20vw;
-    height: 20vw;
-  }
-  #tecnologias .cardsTecno .cardTecno .html {
-    width: 20vw;
-    height: 20vw;
-  }
-  #tecnologias .cardsTecno .cardTecno .css {
-    width: 25.5vw;
-    height: 25.5vw;
-    margin-top: -8%;
-  }
-  #tecnologias .cardsTecno .cardTecno .js {
-    width: 24vw;
-    height: 24vw;
-    margin-top: -8%;
-  }
-  #tecnologias .cardsTecno .cardTecno .scss {
-    width: 20vw;
-    height: 20vw;
-    margin-top: -5%;
-  }
-  #tecnologias .cardsTecno .cardTecno .react {
-    width: 23vw;
-    height: 20vw;
-  }
-  #tecnologias .cardsTecno .cardTecno p {
-    font-size: 20px;
-    font-weight: 400;
-    margin: 0;
-  }
   #proyectos h1 {
     font-size: 30px;
-    margin-bottom: 40px;
+    max-width: 350px;
   }
   #contacto {
     width: 100%;
