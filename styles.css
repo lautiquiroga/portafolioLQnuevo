@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   scroll-behavior: smooth;
 }
@@ -20,9 +21,13 @@ html::-webkit-scrollbar-thumb {
 body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   margin: 0;
-  background-color: rgb(31, 92, 132);
-  background: rgb(30, 105, 193);
-  background: linear-gradient(270deg, rgb(185, 207, 255) 0%, rgb(99, 140, 188) 33%, rgb(31, 92, 132) 100%);
+  background-color: black !important;
+  position: relative;
+  /* Asegura que el posicionamiento absoluto funcione correctamente */
+  background-image: url("./media/espacio.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow-x: hidden;
 }
 
 header {
@@ -85,7 +90,7 @@ header .navbar .navbar-nav .nav-link.active {
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-around;
-  box-shadow: 0px 0px 0.8rem 0px rgb(12, 30, 43);
+  box-shadow: 0px 0px 20px 10px rgb(12, 30, 43);
   border-radius: 0 0 60px 60px;
   -webkit-border-radius: 0 0 60px 60px;
   -moz-border-radius: 0 0 60px 60px;
@@ -180,17 +185,22 @@ header .navbar .navbar-nav .nav-link.active {
   display: flex;
   flex-direction: row;
 }
-#sobreMi .contenedorSpline {
+#sobreMi .contenedorSpline-pc {
   position: relative;
-  width: 45vw;
+  width: 50svw;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 99;
 }
-#sobreMi .contenedorSpline .splineContainer {
+#sobreMi .contenedorSpline-pc .splineContainer {
   width: 100%;
   height: 35vw;
+}
+@media (min-width: 1200px) {
+  #sobreMi .contenedorSpline-mobile {
+    display: none;
+  }
 }
 #sobreMi .textSobremi {
   width: 55vw;
@@ -199,7 +209,7 @@ header .navbar .navbar-nav .nav-link.active {
   justify-content: center;
   align-items: center;
   align-items: flex-start;
-  padding: 100px 0 100px 7%;
+  padding: 200px 0 200px 7%;
 }
 #sobreMi .textSobremi .titulo-sobremi {
   color: white;
@@ -223,7 +233,7 @@ header .navbar .navbar-nav .nav-link.active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 0px 0.8rem 0px rgb(12, 30, 43);
+  box-shadow: 0px 0px 20px 10px rgb(12, 30, 43);
   border-radius: 60px;
   -webkit-border-radius: 60px;
   -moz-border-radius: 60px;
@@ -281,10 +291,10 @@ header .navbar .navbar-nav .nav-link.active {
 #proyectos {
   width: 100%;
   height: auto;
-  padding: 100px 20px 100px 20px;
+  padding: 200px 20px 200px 20px;
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 150px;
 }
 #proyectos h1 {
   display: block;
@@ -370,7 +380,7 @@ header .navbar .navbar-nav .nav-link.active {
   width: 100%;
   padding: 100px 20px;
   height: auto;
-  box-shadow: 0px 0px 0.8rem 0px rgb(12, 30, 43);
+  box-shadow: 0px 0px 20px 10px rgb(12, 30, 43);
   border-radius: 60px;
   -webkit-border-radius: 60px;
   -moz-border-radius: 60px;
@@ -568,10 +578,6 @@ footer .p3 {
   }
 }
 @media (max-width: 1199px) {
-  body {
-    overflow-x: hidden;
-    background: linear-gradient(180deg, rgb(30, 105, 193) 0%, rgb(99, 140, 188) 50%, rgb(223, 233, 254) 100%);
-  }
   #inicio .textoInicio .hola {
     font-size: 25px;
   }
@@ -596,7 +602,7 @@ footer .p3 {
   #sobreMi {
     flex-direction: column-reverse;
     align-items: center;
-    padding: 60px 20px;
+    padding: 100px 20px;
     gap: 20px;
   }
   #sobreMi .textSobremi {
@@ -608,10 +614,19 @@ footer .p3 {
     width: 100%;
     padding: 0;
   }
-  #sobreMi .contenedorSpline {
-    width: 200px;
+  #sobreMi .descr-sobremi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  #sobreMi .contenedorSpline .splineContainer {
+  #sobreMi .contenedorSpline-pc {
+    display: none;
+  }
+  #sobreMi .contenedorSpline-mobile {
+    width: 200px;
+    height: 200px;
+  }
+  #sobreMi .contenedorSpline-mobile .splineContainer {
     width: 200px;
     height: 200px;
   }
@@ -631,17 +646,14 @@ footer .p3 {
     height: 80px;
   }
   #proyectos {
-    padding: 60px 12px;
+    padding: 100px 20px;
     gap: 60px;
   }
   #proyectos h1 {
-    max-width: 450px;
     align-self: center;
     margin: auto;
     padding-bottom: 40px;
-  }
-  footer {
-    color: rgb(0, 0, 0);
+    font-size: 26px;
   }
 }
 @media (max-width: 767px) {
@@ -684,7 +696,7 @@ footer .p3 {
     width: 250px;
   }
   #sobreMi {
-    padding: 60px 12px;
+    padding: 100px 12px;
   }
   #sobreMi .textSobremi .titulo-sobremi {
     font-size: 30px;
@@ -721,5 +733,85 @@ footer .p3 {
   }
   #contacto h1 {
     font-size: 30px;
+  }
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Ajusta el color y la opacidad del fondo oscuro */
+  z-index: -1;
+  /* Asegura que la capa esté detrás del contenido */
+}
+
+.contenedor__animacion {
+  display: none;
+  position: relative;
+  height: 100%;
+}
+
+.nave-fuego {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  rotate: -45deg;
+}
+
+.nave {
+  width: 50px;
+  rotate: 180deg;
+  z-index: 9;
+  margin-top: -50px;
+}
+
+.fuego {
+  width: 50px;
+  margin-top: -50px;
+}
+
+@media (max-width: 1199px) {
+  .nave-fuego {
+    position: fixed;
+    top: 40%;
+    left: 50px;
+    left: 10%;
+    transform: translateY(-40%);
+    rotate: 0deg !important;
+    z-index: -1;
+  }
+}
+/* Estilos del loader */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }/*# sourceMappingURL=styles.css.map */
