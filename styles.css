@@ -779,13 +779,7 @@ body::before {
 
 @media (max-width: 1199px) {
   .nave-fuego {
-    position: fixed;
-    top: 40%;
-    left: 50px;
-    left: 10%;
-    transform: translateY(-40%);
-    rotate: 0deg !important;
-    z-index: -1;
+    display: none;
   }
 }
 /* Estilos del loader */
