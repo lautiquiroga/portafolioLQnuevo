@@ -22,7 +22,7 @@ body {
   margin: 0;
   background-color: rgb(31, 92, 132);
   background: rgb(30, 105, 193);
-  background: linear-gradient(270deg, rgb(31, 92, 132) 0%, rgb(99, 140, 188) 67%, rgb(223, 233, 254) 100%);
+  background: linear-gradient(270deg, rgb(185, 207, 255) 0%, rgb(99, 140, 188) 33%, rgb(31, 92, 132) 100%);
 }
 
 header {
@@ -111,6 +111,7 @@ header .navbar .navbar-nav .nav-link.active {
   font-size: 22px;
   font-weight: 400;
   line-height: 150%;
+  max-width: 600px;
 }
 #inicio .textoInicio .descr-inicio p {
   margin: 0;
@@ -181,24 +182,24 @@ header .navbar .navbar-nav .nav-link.active {
 }
 #sobreMi .contenedorSpline {
   position: relative;
-  width: 50vw;
+  width: 45vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 99;
 }
 #sobreMi .contenedorSpline .splineContainer {
   width: 100%;
-  height: 40vw;
+  height: 35vw;
 }
 #sobreMi .textSobremi {
-  width: 50vw;
+  width: 55vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   align-items: flex-start;
-  padding: 7%;
-  padding-left: 2%;
+  padding: 100px 0 100px 7%;
 }
 #sobreMi .textSobremi .titulo-sobremi {
   color: white;
@@ -206,19 +207,12 @@ header .navbar .navbar-nav .nav-link.active {
   font-size: 35px;
   line-height: 1;
 }
-#sobreMi .textSobremi .menuVirtual {
-  color: #fbb03b;
-  font-weight: 700;
-}
 #sobreMi .textSobremi .descr-sobremi {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 150%;
   color: white;
   margin: 0;
-}
-#sobreMi .textSobremi .descr-sobremi .subDescr {
-  margin-top: 5%;
 }
 
 #tecnologias {
@@ -250,7 +244,7 @@ header .navbar .navbar-nav .nav-link.active {
   justify-content: center;
   flex-wrap: wrap;
   gap: 40px;
-  max-width: 900px;
+  max-width: 1140px;
 }
 #tecnologias .cardsTecno .cardTecno {
   display: flex;
@@ -625,8 +619,8 @@ footer .p3 {
     padding: 80px 20px;
   }
   #tecnologias .cardsTecno {
-    max-width: 800px;
-    gap: 20px;
+    max-width: 900px;
+    gap: 30px;
   }
   #tecnologias .cardsTecno .cardTecno {
     width: 150px;
