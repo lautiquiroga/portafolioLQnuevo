@@ -308,7 +308,7 @@ header .navbar .navbar-nav .nav-link.active {
   flex-direction: column;
   gap: 100px;
 }
-#proyectos h2 {
+#proyectos .title-proyectos {
   display: block;
   text-align: center;
   color: rgb(255, 255, 255);
@@ -371,7 +371,7 @@ header .navbar .navbar-nav .nav-link.active {
   align-items: flex-start;
   text-align: center;
 }
-#proyectos .cards_container--proyectos .cards--proyectos .container_textCard--proyectos .cardTexto h2 {
+#proyectos .cards_container--proyectos .cards--proyectos .container_textCard--proyectos .cardTexto .title-proyecto {
   letter-spacing: 0.1vw;
   font-size: 24px;
   color: #c9b9d3;
@@ -381,7 +381,7 @@ header .navbar .navbar-nav .nav-link.active {
   width: 100%;
   text-align: center;
 }
-#proyectos .cards_container--proyectos .cards--proyectos .container_textCard--proyectos .cardTexto p {
+#proyectos .cards_container--proyectos .cards--proyectos .container_textCard--proyectos .cardTexto .info-proyecto {
   color: #c9b9d3;
   font-size: 18px;
   font-weight: 400;
@@ -514,7 +514,7 @@ header .navbar .navbar-nav .nav-link.active {
 
 footer {
   color: white;
-  padding: 30px 12px;
+  padding: 30px 20px;
 }
 footer p {
   display: flex;
@@ -616,7 +616,7 @@ footer .p3 {
   #sobreMi {
     flex-direction: column-reverse;
     align-items: center;
-    padding: 100px 20px;
+    padding: 80px 20px;
     gap: 20px;
   }
   #sobreMi .textSobremi {
@@ -634,7 +634,7 @@ footer .p3 {
     align-items: center;
   }
   #sobreMi .descr-sobremi .titulo-experiencia {
-    margin-top: 1rem !important;
+    margin: 1rem 0 40px 0 !important;
     color: rgb(44, 131, 189);
   }
   #sobreMi .descr-sobremi ul {
@@ -668,14 +668,17 @@ footer .p3 {
     height: 80px;
   }
   #proyectos {
-    padding: 100px 20px;
+    padding: 80px 20px;
     gap: 60px;
   }
-  #proyectos h2 {
+  #proyectos .title-proyectos {
     align-self: center;
     margin: auto;
     padding-bottom: 40px;
     font-size: 26px;
+  }
+  #proyectos .cards_container--proyectos .cards--proyectos .container_textCard--proyectos {
+    min-height: 0;
   }
 }
 @media (max-width: 767px) {
@@ -717,14 +720,16 @@ footer .p3 {
   #inicio .fotoContainer .camisa {
     width: 250px;
   }
-  #sobreMi {
-    padding: 100px 12px;
-  }
   #sobreMi .textSobremi .titulo-sobremi {
     font-size: 30px;
   }
+  #sobreMi .textSobremi p {
+    margin-bottom: 40px;
+  }
+  #sobreMi .textSobremi .titulo-experiencia {
+    margin-top: 40px;
+  }
   #tecnologias {
-    padding: 80px 12px;
     border-radius: 8vw;
     -webkit-border-radius: 8vw;
     -moz-border-radius: 8vw;

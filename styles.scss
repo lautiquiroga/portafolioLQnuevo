@@ -392,13 +392,12 @@ header {
   flex-direction: column;
   gap: 100px;
 
-  h2 {
+  .title-proyectos {
     display: block;
     text-align: center;
     color: rgb(255, 255, 255);
     // margin: 0;
     color: rgb(44, 131, 189);
-
     font-size: $tituloSize;
     letter-spacing: 0.1vw;
     line-height: 1.2;
@@ -461,7 +460,7 @@ header {
           align-items: flex-start;
           text-align: center;
 
-          h2 {
+          .title-proyecto {
             letter-spacing: 0.1vw;
             font-size: 24px;
             color: $white;
@@ -472,7 +471,7 @@ header {
             text-align: center;
           }
 
-          p {
+          .info-proyecto {
             color: $white;
             font-size: $descrSize;
             font-weight: 400;
@@ -641,7 +640,7 @@ header {
 
 footer {
   color: white;
-  padding: 30px 12px;
+  padding: 30px 20px;
 
   p {
     @include centerCol;
@@ -781,7 +780,7 @@ footer {
   #sobreMi {
     flex-direction: column-reverse;
     align-items: center;
-    padding: 100px 20px;
+    padding: 80px 20px;
     gap: 20px;
 
     .textSobremi {
@@ -797,7 +796,7 @@ footer {
       align-items: center;
 
       .titulo-experiencia {
-        margin-top: 1rem !important;
+        margin: 1rem 0 40px 0 !important;
         color: rgb(44, 131, 189);
       }
 
@@ -842,15 +841,19 @@ footer {
   }
 
   #proyectos {
-    padding: 100px 20px;
+    padding: 80px 20px;
     gap: 60px;
 
-    h2 {
+    .title-proyectos {
       // max-width: 450px;
       align-self: center;
       margin: auto;
       padding-bottom: 40px;
       font-size: 26px;
+    }
+
+    .cards_container--proyectos .cards--proyectos .container_textCard--proyectos {
+      min-height: 0;
     }
   }
 
@@ -906,17 +909,25 @@ footer {
   }
 
   #sobreMi {
-    padding: 100px 12px;
+    // padding: 100px 12px;
 
     .textSobremi {
       .titulo-sobremi {
         font-size: $tituloSizeResp;
       }
+
+      p {
+        margin-bottom: 40px;
+      }
+
+      .titulo-experiencia {
+        margin-top: 40px;
+      }
     }
   }
 
   #tecnologias {
-    padding: 80px 12px;
+    // padding: 80px 20px;
     border-radius: 8vw;
     -webkit-border-radius: 8vw;
     -moz-border-radius: 8vw;
