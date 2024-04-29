@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function () {
         tlPC.to(naveFuego, {
             duration: 4,
             scale: 2,
-            x: -2000,
+            x: -1800,
         }, "-=2");
 
         // Rotar
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Movimiento
         tlPC.to(naveFuego, {
             duration: 4,
-            y: 4500,
+            y: 4400,
         }, "-=2");
     }
 

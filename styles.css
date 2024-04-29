@@ -196,6 +196,10 @@ header .navbar .navbar-nav .nav-link.active {
 #sobreMi .contenedorSpline-pc .splineContainer {
   width: 100%;
   height: 35vw;
+  cursor: grab;
+}
+#sobreMi .contenedorSpline-pc .splineContainer:active {
+  cursor: grabbing;
 }
 @media (min-width: 1200px) {
   #sobreMi .contenedorSpline-mobile {
@@ -209,20 +213,28 @@ header .navbar .navbar-nav .nav-link.active {
   justify-content: center;
   align-items: center;
   align-items: flex-start;
-  padding: 200px 0 200px 7%;
+  padding: 150px 0 150px 7%;
 }
 #sobreMi .textSobremi .titulo-sobremi {
   color: white;
   margin-bottom: 40px;
   font-size: 35px;
   line-height: 1;
+  color: rgb(44, 131, 189);
 }
 #sobreMi .textSobremi .descr-sobremi {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 150%;
   color: white;
   margin: 0;
+}
+#sobreMi .textSobremi .descr-sobremi .titulo-experiencia {
+  font-size: 30px;
+  margin: 60px 0 20px 0;
+}
+#sobreMi .textSobremi .descr-sobremi li {
+  margin-bottom: 10px;
 }
 
 #tecnologias {
@@ -291,15 +303,16 @@ header .navbar .navbar-nav .nav-link.active {
 #proyectos {
   width: 100%;
   height: auto;
-  padding: 200px 20px 200px 20px;
+  padding: 150px 20px 150px 20px;
   display: flex;
   flex-direction: column;
-  gap: 150px;
+  gap: 100px;
 }
-#proyectos h1 {
+#proyectos h2 {
   display: block;
   text-align: center;
   color: rgb(255, 255, 255);
+  color: rgb(44, 131, 189);
   font-size: 35px;
   letter-spacing: 0.1vw;
   line-height: 1.2;
@@ -327,6 +340,7 @@ header .navbar .navbar-nav .nav-link.active {
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
   overflow: hidden;
+  z-index: 99;
 }
 #proyectos .cards_container--proyectos .cards--proyectos .video {
   height: 250px;
@@ -387,7 +401,7 @@ header .navbar .navbar-nav .nav-link.active {
   -ms-border-radius: 60px;
   -o-border-radius: 60px;
 }
-#contacto h1 {
+#contacto h2 {
   display: block;
   text-align: center;
   color: rgb(44, 131, 189);
@@ -619,6 +633,14 @@ footer .p3 {
     flex-direction: column;
     align-items: center;
   }
+  #sobreMi .descr-sobremi .titulo-experiencia {
+    margin-top: 1rem !important;
+    color: rgb(44, 131, 189);
+  }
+  #sobreMi .descr-sobremi ul {
+    list-style-type: none;
+    padding: 0;
+  }
   #sobreMi .contenedorSpline-pc {
     display: none;
   }
@@ -649,7 +671,7 @@ footer .p3 {
     padding: 100px 20px;
     gap: 60px;
   }
-  #proyectos h1 {
+  #proyectos h2 {
     align-self: center;
     margin: auto;
     padding-bottom: 40px;
@@ -713,7 +735,7 @@ footer .p3 {
     font-size: 30px;
     margin-bottom: 40px;
   }
-  #proyectos h1 {
+  #proyectos h2 {
     font-size: 30px;
     max-width: 350px;
   }
@@ -731,7 +753,7 @@ footer .p3 {
     -ms-border-radius: 8vw;
     -o-border-radius: 8vw;
   }
-  #contacto h1 {
+  #contacto h2 {
     font-size: 30px;
   }
 }
@@ -763,6 +785,7 @@ body::before {
   align-items: center;
   justify-content: center;
   rotate: -45deg;
+  z-index: 9;
 }
 
 .nave {
