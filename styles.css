@@ -25,8 +25,8 @@ body {
   position: relative;
   /* Asegura que el posicionamiento absoluto funcione correctamente */
   background-image: url("./media/espacio.jpg");
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-position: top center;
   overflow-x: hidden;
 }
 

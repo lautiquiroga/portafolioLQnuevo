@@ -63,8 +63,8 @@ body {
   /* Asegura que el posicionamiento absoluto funcione correctamente */
   background-image: url("./media/espacio.jpg");
   // font-family: "GenericTechno";
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-position: top center;
   // background-color: rgb(31, 92, 132);
   // // background: rgb(30, 105, 193);
   // background: rgb(30, 105, 193);
