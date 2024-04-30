@@ -219,12 +219,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Cuando la ventana haya cargado completamente
 window.addEventListener("load", function () {
-    // Forzar una espera de 2 segundos antes de ocultar el loader y mostrar el contenido
     setTimeout(function () {
-        // Ocultar el loader
         document.querySelector(".loader").style.display = "none";
-        // Mostrar el contenido de la página
         document.querySelector(".contenedor__animacion").style.display = "block";
-    }, 1000); // 2000 milisegundos = 2 segundos
+    }, 1000);
 });
 
