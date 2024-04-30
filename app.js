@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function ocultarSpline() {
         // Obtener el contenedor de proyectos y el contenedor con la clase splineContainer
-        var proyectos = document.getElementById('proyectos');
+        var proyectos = document.getElementById('tecnologias');
         var splineContainer = document.querySelector('.splineContainer');
 
         // Obtener las coordenadas de la sección de proyectos
