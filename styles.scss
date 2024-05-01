@@ -60,20 +60,33 @@ body {
   margin: 0;
   background-color: black !important;
   position: relative;
-  /* Asegura que el posicionamiento absoluto funcione correctamente */
-  background-image: url("./media/espacio.jpg");
-  // font-family: "GenericTechno";
+  background-image: url("./media/espacio.jpeg");
   background-size: contain;
   background-position: top center;
-  // background-color: rgb(31, 92, 132);
-  // // background: rgb(30, 105, 193);
-  // background: rgb(30, 105, 193);
-  // background: linear-gradient(270deg,
-  //     rgb(185, 207, 255) 0%,
-  //     rgba(99, 140, 188, 1) 33%,
-  //     rgb(31, 92, 132) 100%);
   overflow-x: hidden;
 
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+
+@media(min-width:1200px) {
+  .contenedor__animacion {
+    display: none;
+  }
+}
+
+.contenedor__animacion {
+  position: relative;
+  height: 100%;
 }
 
 header {
@@ -257,16 +270,30 @@ header {
     position: relative;
     width: 50svw;
     @include center;
-    z-index: 99;
 
     .splineContainer {
       width: 100%;
-      height: 35vw;
+      height: 30vw;
       cursor: grab;
 
       &:active {
         cursor: grabbing;
       }
+    }
+  }
+
+  .swipe {
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+    opacity: 1;
+
+    &.hidden {
+      opacity: 0;
     }
   }
 
@@ -813,12 +840,21 @@ footer {
     .contenedorSpline-mobile {
       width: 200px;
       height: 200px;
+      // display: none;
 
       .splineContainer {
-        width: 200px;
-        height: 200px;
+        width: 100%;
+        height: 100%;
       }
     }
+
+    .swipe {
+      height: 100px;
+      width: 100px;
+      position: absolute;
+      top: 50%;
+    }
+
   }
 
   #tecnologias {
@@ -921,7 +957,7 @@ footer {
       }
 
       .titulo-experiencia {
-        margin-top: 40px;
+        margin: 40px 0 30px 0 !important;
       }
     }
   }
@@ -967,99 +1003,10 @@ footer {
   }
 }
 
-
-
-// @font-face {
-//   font-family: "GenericTechno"; /* Nombre de la fuente */
-//   src: url("media/GenericTechno.otf") format("opentype"); /* Ruta a tu archivo OTF */
-// }
-
-// .backBtn {
-//   position: fixed;
-//   top: 20px;
-//   left: 20px;
-//   z-index: 9;
-//   width: 25px;
-//   background-color: rgb(255, 255, 255);
-//   border-radius: 100%;
-//   padding: 5px;
-//   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-//   transition: background-color 0.2s;
-// }
-
-// .backBtn:hover {
-//   background-color: rgb(240, 240, 240);
-// }
-
-// body {
-//   margin: 0;
-
-//   position: relative;
-//   /* Asegura que el posicionamiento absoluto funcione correctamente */
-//   background-image: url("./media/espacio.jpg");
-//   font-family: "GenericTechno";
-//   background-size: cover;
-//   background-position: center;
-//   background-color: black;
-// }
-
-// body::before {
-//   content: "";
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   background-color: rgba(0, 0, 0, 0.7);
-//   /* Ajusta el color y la opacidad del fondo oscuro */
-//   z-index: -1;
-//   /* Asegura que la capa esté detrás del contenido */
-// }
-
-// .contenedor {
-//   width: 100%;
-//   height: 800vh;
-//   text-align: center;
-//   overflow: hidden;
-//   max-width: 100vw;
-// }
-
-// body::-webkit-scrollbar {
-//   display: none;
-// }
-
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  /* Ajusta el color y la opacidad del fondo oscuro */
-  z-index: -1;
-  /* Asegura que la capa esté detrás del contenido */
-}
-
-.contenedor__animacion {
-  display: none;
-  position: relative;
-  height: 100%;
-  // display: flex;
-  // align-items: center;
-  // justify-content: space-around;
-  // flex-direction: column;
-}
-
 .nave-fuego {
   position: absolute;
   top: -50px;
   left: -50px;
-  // transform: translateX(-50%);
-  // position: fixed;
-  // top: 50%;
-  // left: 50%;
-  // transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1147,5 +1094,11 @@ body::before {
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media(max-width:1199px) {
+  .loader {
+    display: none;
   }
 }

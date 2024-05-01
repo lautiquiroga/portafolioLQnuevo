@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html {
   scroll-behavior: smooth;
 }
@@ -23,11 +22,31 @@ body {
   margin: 0;
   background-color: black !important;
   position: relative;
-  /* Asegura que el posicionamiento absoluto funcione correctamente */
-  background-image: url("./media/espacio.jpg");
+  background-image: url("./media/espacio.jpeg");
   background-size: contain;
   background-position: top center;
   overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+
+@media (min-width: 1200px) {
+  .contenedor__animacion {
+    display: none;
+  }
+}
+.contenedor__animacion {
+  position: relative;
+  height: 100%;
 }
 
 header {
@@ -191,15 +210,27 @@ header .navbar .navbar-nav .nav-link.active {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 99;
 }
 #sobreMi .contenedorSpline-pc .splineContainer {
   width: 100%;
-  height: 35vw;
+  height: 30vw;
   cursor: grab;
 }
 #sobreMi .contenedorSpline-pc .splineContainer:active {
   cursor: grabbing;
+}
+#sobreMi .swipe {
+  height: 120px;
+  width: 120px;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s ease;
+  opacity: 1;
+}
+#sobreMi .swipe.hidden {
+  opacity: 0;
 }
 @media (min-width: 1200px) {
   #sobreMi .contenedorSpline-mobile {
@@ -649,8 +680,14 @@ footer .p3 {
     height: 200px;
   }
   #sobreMi .contenedorSpline-mobile .splineContainer {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
+  }
+  #sobreMi .swipe {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 50%;
   }
   #tecnologias {
     padding: 80px 20px;
@@ -727,7 +764,7 @@ footer .p3 {
     margin-bottom: 40px;
   }
   #sobreMi .textSobremi .titulo-experiencia {
-    margin-top: 40px;
+    margin: 40px 0 30px 0 !important;
   }
   #tecnologias {
     border-radius: 8vw;
@@ -762,25 +799,6 @@ footer .p3 {
     font-size: 30px;
   }
 }
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  /* Ajusta el color y la opacidad del fondo oscuro */
-  z-index: -1;
-  /* Asegura que la capa esté detrás del contenido */
-}
-
-.contenedor__animacion {
-  display: none;
-  position: relative;
-  height: 100%;
-}
-
 .nave-fuego {
   position: absolute;
   top: -50px;
@@ -835,5 +853,10 @@ body::before {
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+@media (max-width: 1199px) {
+  .loader {
+    display: none;
   }
 }/*# sourceMappingURL=styles.css.map */

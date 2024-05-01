@@ -1,10 +1,18 @@
 import { Application } from '@splinetool/runtime';
 
 document.addEventListener('DOMContentLoaded', function () {
+    const pantallaAncho = window.innerWidth;
+
+    if (pantallaAncho > 1200) {
+        setTimeout(function () {
+            document.querySelector(".loader").style.display = "none";
+            document.querySelector(".contenedor__animacion").style.display = "block";
+        }, 3000);
+    }
+
 
     // Posicionar el spline dependiendo el tamaño de la pantalla
     function agregarSpline() {
-        var pantallaAncho = window.innerWidth;
         var contenedorPadre;
 
         // Determina el contenedor padre según el tamaño de la pantalla
@@ -24,9 +32,13 @@ document.addEventListener('DOMContentLoaded', function () {
             var canvasElemento = document.createElement("canvas");
             canvasElemento.id = "canvas3d";
             divElemento.appendChild(canvasElemento);
-
-            // Agrega el nuevo elemento al contenedor padre
             contenedorPadre.appendChild(divElemento);
+
+            if (pantallaAncho > 1200) {
+                crearSplinePC();
+            } else {
+                crearSplineMobile();
+            }
         }
     }
 
@@ -34,12 +46,20 @@ document.addEventListener('DOMContentLoaded', function () {
     agregarSpline();
 
 
+    function crearSplinePC() {
+        // Spline
+        const canvas = document.getElementById('canvas3d');
+        const app = new Application(canvas);
+        app.load('https://prod.spline.design/NZdRNBMIvCemhcFR/scene.splinecode');
+    }
 
+    function crearSplineMobile() {
+        // Spline
+        const canvas = document.getElementById('canvas3d');
+        const app = new Application(canvas);
+        app.load('https://prod.spline.design/fIHzAOLsqkF9L5qI/scene.splinecode');
+    }
 
-    // Spline
-    const canvas = document.getElementById('canvas3d');
-    const app = new Application(canvas);
-    app.load('https://prod.spline.design/51CcjNugRAUcYV3e/scene.splinecode');
 
     var navbarToggler = document.querySelector('.navbar-toggler');
     var header = document.querySelector('header');
@@ -97,6 +117,23 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    const swipeElements = document.querySelectorAll('.swipe');
+
+    function hideSwipeAfterDelay(element) {
+        var rect = element.getBoundingClientRect();
+        var bottomEdgeOfViewport = window.innerHeight || document.documentElement.clientHeight;
+
+        if (rect.bottom <= bottomEdgeOfViewport) {
+            setTimeout(function () {
+                element.classList.add('hidden');
+                setTimeout(function () {
+                    element.style.display = 'none';
+                }, 1000);
+            }, 5000);
+        }
+
+    }
+
     navbarToggler.addEventListener('click', function () {
         if (window.scrollY === 0) {
             if (!navbarToggler.classList.contains('collapsed')) {
@@ -116,6 +153,10 @@ document.addEventListener('DOMContentLoaded', function () {
         highlightNavLink();
         headerBackground();
         ocultarSpline();
+        swipeElements.forEach(function (swipeElement) {
+            if (swipeElement.style.display !== 'none')
+                hideSwipeAfterDelay(swipeElement);
+        });
     });
 
 
@@ -148,6 +189,7 @@ document.addEventListener('DOMContentLoaded', function () {
         tlPC.to(naveFuego, {
             y: 2000,
             duration: 4,
+            scale: .8
         });
 
         // Rotar
@@ -216,12 +258,3 @@ document.addEventListener('DOMContentLoaded', function () {
     //     });
     // }
 })
-
-// Cuando la ventana haya cargado completamente
-window.addEventListener("load", function () {
-    setTimeout(function () {
-        document.querySelector(".loader").style.display = "none";
-        document.querySelector(".contenedor__animacion").style.display = "block";
-    }, 1000);
-});
-
