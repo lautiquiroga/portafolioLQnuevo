@@ -12705,7 +12705,7 @@ footer .p3 {
     top: 50%;
   }
   #tecnologias {
-    padding: 80px 20px;
+    padding: 80px 7%;
   }
   #tecnologias .cardsTecno {
     max-width: 900px;
@@ -12740,6 +12740,7 @@ footer .p3 {
     height: fit-content;
     padding-bottom: 80px;
     position: relative;
+    padding-left: 7%;
   }
   #contacto .container--contacto {
     width: 50%;
@@ -12822,6 +12823,7 @@ footer .p3 {
     margin-bottom: 40px;
   }
   #tecnologias {
+    padding: 80px 20px;
     border-radius: 8vw;
     -webkit-border-radius: 8vw;
     -moz-border-radius: 8vw;
