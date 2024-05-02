@@ -1,98 +1,139 @@
 import { Application } from '@splinetool/runtime';
 
 document.addEventListener('DOMContentLoaded', function () {
-    const pantallaAncho = window.innerWidth;
 
     // if (pantallaAncho > 1200) {
-        setTimeout(function () {
-            document.querySelector(".loader").style.display = "none";
-            document.querySelector(".contenedor__animacion").style.display = "block";
-        }, 3000);
+    setTimeout(function () {
+        document.querySelector(".loader").style.display = "none";
+        document.querySelector(".contenedor__animacion").style.display = "block";
+    }, 3000);
     // }
 
 
-    // Posicionar el spline dependiendo el tamaño de la pantalla
+    ////// SPLINE //////
+
+    /// Spline del planeta
+
+    agregarSpline();
+
     function agregarSpline() {
-        var contenedorPadre;
 
-        // Determina el contenedor padre según el tamaño de la pantalla
-        if (pantallaAncho > 1200) {
-            contenedorPadre = document.querySelector(".contenedorSpline-pc");
-        } else {
-            contenedorPadre = document.querySelector(".contenedorSpline-mobile");
-        }
+        const contenedorPadrePC = document.querySelector(".contenedorSpline-pc");
+        const contenedorPadreMobile = document.querySelector(".contenedorSpline-mobile");
 
-        // Verifica si ya existe un elemento .splineContainer dentro del contenedor padre
-        var elementoExistente = contenedorPadre.querySelector(".splineContainer");
+        const splineContainerPC = contenedorPadrePC.querySelector(".splineContainer");
+        const splineContainerMobile = contenedorPadreMobile.querySelector(".splineContainer");
 
-        // Si no existe un elemento .splineContainer, crea uno y agrégalo al contenedor padre
-        if (!elementoExistente) {
-            var divElemento = document.createElement("div");
-            divElemento.classList.add("splineContainer");
-            var canvasElemento = document.createElement("canvas");
-            canvasElemento.id = "canvas3d";
-            divElemento.appendChild(canvasElemento);
-            contenedorPadre.appendChild(divElemento);
+        if (window.innerWidth > 1200) {
+            if (splineContainerMobile) {
+                splineContainerMobile.remove();
+            }
 
-            if (pantallaAncho > 1200) {
+            if (!splineContainerPC) {
+                const divElemento = document.createElement("div");
+                divElemento.classList.add("splineContainer");
+                const canvasElemento = document.createElement("canvas");
+                canvasElemento.id = "canvas3d";
+                divElemento.appendChild(canvasElemento);
+                contenedorPadrePC.appendChild(divElemento);
                 crearSplinePC();
-            } else {
+            }
+        } else {
+            if (splineContainerPC) {
+                splineContainerPC.remove();
+            }
+
+            if (!splineContainerMobile) {
+                const divElemento = document.createElement("div");
+                divElemento.classList.add("splineContainer");
+                const canvasElemento = document.createElement("canvas");
+                canvasElemento.id = "canvas3d";
+                divElemento.appendChild(canvasElemento);
+                contenedorPadreMobile.appendChild(divElemento);
                 crearSplineMobile();
             }
         }
     }
 
-    // Llama a la función para agregar el elemento al cargar la página
-    agregarSpline();
-
-    function agregarSpline2() {
-        var contenedorPadre2;
-
-        // Determina el contenedor padre según el tamaño de la pantalla
-            contenedorPadre2 = document.querySelector(".contenedorSpline2");
-            // contenedorPadre = document.querySelector(".contenedorSpline-mobile");
-
-        // Verifica si ya existe un elemento .splineContainer dentro del contenedor padre
-        var elementoExistente2 = contenedorPadre2.querySelector(".splineContainer2");
-
-        // Si no existe un elemento .splineContainer, crea uno y agrégalo al contenedor padre
-
-        if (!elementoExistente2) {
-            var divElemento = document.createElement("div");
-            divElemento.classList.add("splineContainer2");
-            var canvasElemento = document.createElement("canvas");
-            canvasElemento.id = "canvas3d2";
-            divElemento.appendChild(canvasElemento);
-            contenedorPadre2.appendChild(divElemento);
-
-            if (pantallaAncho > 768) {
-                crearSpline2PC();
-            } else {
-                crearSpline2Mobile();
-            }
-        }
-    }
-
-    function quitarSpline2() {
-
-         const contenedorPadre2 = document.querySelector(".contenedorSpline2");
-         const elementoExistente2 = contenedorPadre2.querySelector(".splineContainer2");
-
-        // Si no existe un elemento .splineContainer, crea uno y agrégalo al contenedor padre
-
-        if (elementoExistente2) {
-            // Borrar splineContainer2
-            elementoExistente2.remove();
-        }
-    }
-    
-    agregarSpline2();
-
     function crearSplinePC() {
-        // Spline
         const canvas = document.getElementById('canvas3d');
         const app = new Application(canvas);
         app.load('https://prod.spline.design/NZdRNBMIvCemhcFR/scene.splinecode');
+    }
+
+    function crearSplineMobile() {
+        const canvas = document.getElementById('canvas3d');
+        const app = new Application(canvas);
+        app.load('https://prod.spline.design/fIHzAOLsqkF9L5qI/scene.splinecode');
+    }
+
+    function ocultarSpline() {
+        var tecnologias = document.getElementById('tecnologias');
+        // var wordpress = document.getElementById('wordpress');
+        var splineContainer = document.querySelector('.splineContainer');
+
+        // Obtener las coordenadas de la sección de tecnologias
+        var tecnologiasRect = tecnologias.getBoundingClientRect();
+        // var wordpressRect = wordpress.getBoundingClientRect();
+
+        // Verificar si la parte superior de la sección de tecnologias está en la parte superior de la ventana
+        if (tecnologiasRect.top <= 0) {
+            // alert(tecnologiasRect.top)
+            splineContainer.style.display = 'none';
+        } else {
+            splineContainer.style.display = 'block';
+        }
+
+
+        /* if (wordpressRect.top <= 0) {
+            console.log('wp');
+            agregarSpline2();
+        } else {
+            quitarSpline2();
+        }  */
+
+    }
+
+    /// Spline del astronauta
+
+    agregarSpline2();
+
+    function agregarSpline2() {
+        const contenedorPadre2 = document.querySelector(".contenedorSpline2");
+
+        const splineContainerPC = document.querySelector(".splineContainerPC");
+        const splineContainerMobile = document.querySelector(".splineContainerMobile");
+
+        // Determina el contenedor padre según el tamaño de la pantalla
+        if (window.innerWidth > 1200) {
+            // if (splineContainerMobile) {
+            //     splineContainerMobile.remove();
+            // }
+
+            if (!splineContainerPC) {
+                const divElemento = document.createElement("div");
+                divElemento.classList.add("splineContainerPC");
+                const canvasElemento = document.createElement("canvas");
+                canvasElemento.id = "canvas3d2";
+                divElemento.appendChild(canvasElemento);
+                contenedorPadre2.appendChild(divElemento);
+                crearSpline2PC();
+            }
+        } else {
+            if (splineContainerPC) {
+                splineContainerPC.remove();
+            }
+
+            if (!splineContainerMobile) {
+                const divElemento = document.createElement("div");
+                divElemento.classList.add("splineContainerMobile");
+                const canvasElemento = document.createElement("canvas");
+                canvasElemento.id = "canvas3d2";
+                divElemento.appendChild(canvasElemento);
+                contenedorPadre2.appendChild(divElemento);
+                crearSpline2Mobile();
+            }
+        }
     }
 
     function crearSpline2PC() {
@@ -107,20 +148,15 @@ document.addEventListener('DOMContentLoaded', function () {
         app.load('https://prod.spline.design/Miyin8xZVsgPs6vr/scene.splinecode');
     }
 
-    function crearSplineMobile() {
-        // Spline
-        const canvas = document.getElementById('canvas3d');
-        const app = new Application(canvas);
-        app.load('https://prod.spline.design/fIHzAOLsqkF9L5qI/scene.splinecode');
-    }
 
+
+    ///// Header /////
 
     var navbarToggler = document.querySelector('.navbar-toggler');
     var header = document.querySelector('header');
 
     highlightNavLink();
     headerBackground();
-
 
     // Función para agregar o quitar la clase 'active' según la posición de la ventana
     function highlightNavLink() {
@@ -152,33 +188,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    function ocultarSpline() {
-        // Obtener el contenedor de proyectos y el contenedor con la clase splineContainer
-        var tecnologias = document.getElementById('tecnologias');
-        var wordpress = document.getElementById('wordpress');
-        var splineContainer = document.querySelector('.splineContainer');
-
-        // Obtener las coordenadas de la sección de tecnologias
-        var tecnologiasRect = tecnologias.getBoundingClientRect();
-        var wordpressRect = wordpress.getBoundingClientRect();
-
-        // Verificar si la parte superior de la sección de tecnologias está en la parte superior de la ventana
-        if (tecnologiasRect.top <= 0) {
-            // alert(tecnologiasRect.top)
-            splineContainer.style.display = 'none';
-        } else {
-            splineContainer.style.display = 'block';
+    navbarToggler.addEventListener('click', function () {
+        if (window.scrollY === 0) {
+            if (!navbarToggler.classList.contains('collapsed')) {
+                header.classList.add('headerBlack');
+            } else {
+                header.classList.remove('headerBlack');
+            }
         }
+    });
 
 
-        /* if (wordpressRect.top <= 0) {
-            console.log('wp');
-            agregarSpline2();
-        } else {
-            quitarSpline2();
-        }  */
-        
-    }
+
+    ///// Gif de swiper /////
 
     const swipeElements = document.querySelectorAll('.swipe');
 
@@ -197,19 +219,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
-    navbarToggler.addEventListener('click', function () {
-        if (window.scrollY === 0) {
-            if (!navbarToggler.classList.contains('collapsed')) {
-                header.classList.add('headerBlack');
-            } else {
-                header.classList.remove('headerBlack');
-            }
-        }
-    });
+
+    ///// Event Listeners /////
 
     window.addEventListener('resize', function () {
+        ejecutarGsap();
         highlightNavLink();
-        agregarElementoSegunTamaño();
+        agregarSpline();
+        agregarSpline2();
+        if (window.innerWidth > 1200) {
+            location.reload();
+        }
     });
 
     window.addEventListener('scroll', function () {
@@ -223,63 +243,60 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    // Gsap
-    var windowWidth = window.innerWidth;
-
-    window.addEventListener("resize", function () {
-        if (window.innerWidth !== windowWidth) {
-            windowWidth = window.innerWidth;
-            location.reload();
-        }
-    });
+    ///// Gsap //////
 
     gsap.registerPlugin(ScrollTrigger);
 
     const naveFuego = document.querySelector(".nave-fuego");
 
+    ejecutarGsap();
+
     // Desktop
-    if (window.matchMedia("(min-width: 1200px)").matches) {
-        const tlPC = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".contenedor__animacion",
-                start: "top top",
-                end: "100% 100%",
-                scrub: true,
-            },
-        });
+    function ejecutarGsap() {
+        if (window.matchMedia("(min-width: 1200px)").matches) {
+            const tlPC = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".contenedor__animacion",
+                    start: "top top",
+                    end: "100% 100%",
+                    scrub: true,
+                },
+            });
 
-        // Movimiento
-        tlPC.to(naveFuego, {
-            y: 2000,
-            duration: 4,
-            scale: .8
-        });
+            // Movimiento
+            tlPC.to(naveFuego, {
+                y: 2000,
+                duration: 4,
+                scale: .8
+            });
 
-        // Rotar
-        tlPC.to(naveFuego, {
-            rotation: 90,
-            duration: 4,
-        }, "-=2");
+            // Rotar
+            tlPC.to(naveFuego, {
+                rotation: 90,
+                duration: 4,
+            }, "-=2");
 
-        // Movimiento
-        tlPC.to(naveFuego, {
-            duration: 4,
-            scale: 2,
-            x: -1800,
-        }, "-=2");
+            // Movimiento
+            tlPC.to(naveFuego, {
+                duration: 4,
+                scale: 2,
+                x: -1800,
+            }, "-=2");
 
-        // Rotar
-        tlPC.to(naveFuego, {
-            rotation: -20,
-            duration: 4,
-        }, "-=2");
+            // Rotar
+            tlPC.to(naveFuego, {
+                rotation: -20,
+                duration: 4,
+            }, "-=2");
 
-        // Movimiento
-        tlPC.to(naveFuego, {
-            duration: 4,
-            y: 4400,
-        }, "-=2");
+            // Movimiento
+            tlPC.to(naveFuego, {
+                duration: 4,
+                y: 4400,
+            }, "-=2");
+        }
     }
+
 
     // Tablet
     // if (window.matchMedia("(min-width: 768px) and (max-width: 1199px)").matches) {

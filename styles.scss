@@ -64,7 +64,6 @@ body {
   background-size: contain;
   background-position: top center;
   overflow-x: hidden;
-
 }
 
 body::before {
@@ -288,6 +287,12 @@ header {
     }
   }
 
+  .loader2 {
+    position: absolute;
+    width: 60px;
+    z-index: -1;
+  }
+
   .swipe {
     height: 100px;
     width: 100px;
@@ -362,17 +367,17 @@ header {
 }
 
 #tecnologias {
-  // background-color: rgb(13, 13, 13);
+  background-color: rgb(13, 13, 13);
   height: auto;
-  padding: 0 20px;
+  padding: 100px 20px;
   @include centerCol;
-  // box-shadow: 0px 0px 20px 10px rgb(12, 30, 43);
+  box-shadow: 0px 0px 20px 10px rgb(12, 30, 43);
 
-  /* border-radius: 60px;
+  border-radius: 60px;
   -webkit-border-radius: 60px;
   -moz-border-radius: 60px;
   -ms-border-radius: 60px;
-  -o-border-radius: 60px; */
+  -o-border-radius: 60px;
 
   .titulo-tecno {
     color: rgb(44, 131, 189);
@@ -527,13 +532,7 @@ header {
 #contacto {
   width: 100%;
   position: relative;
-  height: 100vh;
-  cursor: grab;
-
-  &:active {
-    cursor: grabbing
-  }
-
+  height: 90vh;
   // padding: 100px 20px;
   // background-color: rgb(13, 13, 13);
   // box-shadow: 0px 0px 20px 10px rgb(12, 30, 43);
@@ -545,10 +544,6 @@ header {
 
   .container--contacto {
     width: 30%;
-    //border-radius: 24px;
-    @include centerCol;
-    //padding: 3rem;
-    padding-bottom: 40px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -556,7 +551,7 @@ header {
 
     h2 {
       display: block;
-      text-align: center;
+      // text-align: center;
       color: rgb(44, 131, 189);
       font-size: $tituloSize;
       letter-spacing: 0.1rem;
@@ -570,7 +565,7 @@ header {
       text-decoration: none;
 
       .icono {
-        height: 40px;
+        height: 35px;
       }
 
       .wsp {
@@ -580,25 +575,12 @@ header {
       &:hover {
         opacity: 1;
       }
+
+      .linkedin {
+        height: 38px;
+        width: 38px
+      }
     }
-
-    // .alertaContainer {
-    //   margin-top: 4%;
-    //   background-color: rgb(195, 244, 204);
-    //   color: green;
-    //   padding: 1vw 1.2vw;
-    //   border-radius: 0.8vw;
-    //   -webkit-border-radius: 0.8vw;
-    //   -moz-border-radius: 0.8vw;
-    //   -ms-border-radius: 0.8vw;
-    //   -o-border-radius: 0.8vw;
-
-    //   p {
-    //     margin: 0;
-    //     font-size: $descrSize;
-    //     font-weight: 500;
-    //   }
-    // }
 
     .form-contact {
       margin-top: 20px;
@@ -662,6 +644,7 @@ header {
           cursor: pointer;
           transition: 1s all;
           font-weight: 700;
+          width: 100%;
 
           &:hover {
             background: #353c5c;
@@ -686,6 +669,30 @@ header {
       -webkit-box-shadow: 0 0 0 30px $eerie-black inset !important;
       -webkit-text-fill-color: $white !important;
     }
+  }
+
+  .contenedorSpline2 {
+    width: 100vw;
+    height: 100%;
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing
+    }
+
+    .splineContainerPC {
+      width: 100vw;
+      height: 100%;
+
+      #canvas3d2 {
+        width: 100vw;
+        height: 100%;
+      }
+    }
+  }
+
+  .luna {
+    display: none;
   }
 }
 
@@ -841,7 +848,7 @@ footer {
   #sobreMi {
     flex-direction: column-reverse;
     align-items: center;
-    padding: 80px 20px;
+    padding: 80px 7%;
     gap: 20px;
 
     .textSobremi {
@@ -879,7 +886,7 @@ footer {
     .contenedorSpline-mobile {
       width: 200px;
       height: 200px;
-      // display: none;
+      @include center;
 
       .splineContainer {
         width: 100%;
@@ -933,13 +940,18 @@ footer {
   }
 
   #contacto {
-    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    padding-bottom: 80px;
+    position: relative;
 
     .container--contacto {
-      left: 40px;
-      width: 40%;
-      top: 0;
-      transform: translateY(0);
+      width: 50%;
+      position: static;
+      transform: none;
+      height: fit-content;
 
       h2 {
         font-size: $tituloSizeResp;
@@ -947,13 +959,24 @@ footer {
     }
 
     .contenedorSpline2 {
-      width: 100%;
-      position: absolute;
-      bottom: 0;
+      width: fit-content;
+      height: fit-content;
 
       #canvas3d2 {
-        width: 100% !important;
+        width: 400px !important;
+        height: 400px !important;
       }
+    }
+
+    .luna {
+      display: block;
+      position: absolute;
+      width: 200px;
+      z-index: -1;
+      height: auto;
+      object-fit: cover;
+      bottom: 0;
+      right: 0;
     }
   }
 
@@ -1011,6 +1034,7 @@ footer {
 
   #sobreMi {
     // padding: 100px 12px;
+    padding: 80px 20px;
 
     .textSobremi {
 
@@ -1045,27 +1069,22 @@ footer {
   }
 
   #contacto {
-    width: 100%;
-    height: 100vh;
+    flex-direction: column;
+    gap: 40px;
 
-    // min-height: 800px;
     .container--contacto {
-      // left: 40px;
       padding: 0 20px;
-      left: 0;
       width: 100%;
+      @include centerCol()
     }
 
     .contenedorSpline2 {
-      width: 200px;
-      height: 200px;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 20vh;
+      width: fit-content;
+      height: fit-content;
 
-      .splineContainer2 {
-        width: 100%;
-        height: 100%;
+      #canvas3d2 {
+        width: 200px !important;
+        height: 200px !important;
       }
     }
   }

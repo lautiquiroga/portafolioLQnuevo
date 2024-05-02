@@ -6,10 +6,8 @@
     <title>Lautaro Quiroga</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
-      crossorigin="anonymous"
     />
     <meta
       name="description"
@@ -174,6 +172,7 @@
             </p>
             <div class="contenedorSpline-mobile">
               <img src="./media/swipe.gif" alt="swipe" class="swipe" />
+              <img src="./media/loader.gif" alt="loader" class="loader2" />
             </div>
             <h3 class="titulo-experiencia">Experiencia laboral</h3>
             <ul>
@@ -198,6 +197,7 @@
         </div>
         <div class="contenedorSpline-pc">
           <img src="./media/swipe.gif" alt="swipe" class="swipe" />
+          <img src="./media/loader.gif" alt="loader" class="loader2" />
         </div>
       </section>
 
@@ -527,7 +527,6 @@
 
       <!-- Contacto -->
       <section id="contacto">
-        <div class="contenedorSpline2"></div>
         <div class="container--contacto">
           <h2 data-section="contacto" data-value="title">Contacto</h2>
 
@@ -614,17 +613,21 @@
             </div>
           </form>
         </div>
+
+        <div class="contenedorSpline2"></div>
+
+        <img src="./media/luna.png" alt="luna" class="luna" />
       </section>
 
       <!-- Footer -->
-      <footer id="footer">
+      <!-- <footer id="footer">
         <p class="p1">Lautaro Quiroga</p>
         <p class="p2">
           Ciudad de Córdoba. Córdoba - Argentina
           <br />
         </p>
         <p class="p3">Copyright © | Todos los derechos reservados.</p>
-      </footer>
+      </footer> -->
     </div>
     <!-- Scripts -->
     <script
@@ -638,14 +641,14 @@
         }
       }
     </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-      crossorigin="anonymous"
-    ></script>
 
+    <script
+      type="module"
+      src="node_modules/bootstrap/dist/js/bootstrap.min.js"
+    ></script>
     <script type="module" src="app.js"></script>
   </body>
 </html>
