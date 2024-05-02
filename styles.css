@@ -249,7 +249,8 @@ header .navbar .navbar-nav .nav-link.active {
   align-items: flex-start;
   padding: 150px 0 150px 7%;
 }
-#sobreMi .textSobremi .titulo-sobremi, #sobreMi .textSobremi .titulo-experiencia {
+#sobreMi .textSobremi .titulo-sobremi,
+#sobreMi .textSobremi .titulo-experiencia {
   color: white;
   margin-bottom: 40px;
   font-size: 35px;
@@ -678,7 +679,8 @@ footer .p3 {
     width: 100%;
     padding: 0;
   }
-  #sobreMi .titulo-sobremi, #sobreMi .titulo-experiencia {
+  #sobreMi .titulo-sobremi,
+  #sobreMi .titulo-experiencia {
     font-size: 30px !important;
     margin-bottom: 30px;
   }
@@ -822,12 +824,23 @@ footer .p3 {
   }
   #contacto {
     width: 100%;
-    padding-bottom: 50vh;
+    height: 100vh;
   }
   #contacto .container--contacto {
     padding: 0 20px;
     left: 0;
     width: 100%;
+  }
+  #contacto .contenedorSpline2 {
+    width: 200px;
+    height: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20vh;
+  }
+  #contacto .contenedorSpline2 .splineContainer2 {
+    width: 100%;
+    height: 100%;
   }
 }
 .nave-fuego {
