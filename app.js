@@ -77,12 +77,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function ocultarSpline() {
         var tecnologias = document.getElementById('tecnologias');
-        // var wordpress = document.getElementById('wordpress');
+        var contacto = document.getElementById('wordpress');
         var splineContainer = document.querySelector('.splineContainer');
+        var splineContainerMobile = document.querySelector('.splineContainerMobile');
+        var splineContainerPC = document.querySelector('.splineContainerPC');
 
         // Obtener las coordenadas de la sección de tecnologias
         var tecnologiasRect = tecnologias.getBoundingClientRect();
-        // var wordpressRect = wordpress.getBoundingClientRect();
+        var contactoRect = contacto.getBoundingClientRect();
 
         // Verificar si la parte superior de la sección de tecnologias está en la parte superior de la ventana
         if (tecnologiasRect.top <= 0) {
@@ -92,15 +94,28 @@ document.addEventListener('DOMContentLoaded', function () {
             splineContainer.style.display = 'block';
         }
 
+        if (splineContainerMobile) {
+            if (contactoRect.top <= 0) {
+                console.log('wp');
+                splineContainerMobile.style.display = 'block';
+            } else {
+                splineContainerMobile.style.display = 'none';
+            }
+        }
 
-        /* if (wordpressRect.top <= 0) {
-            console.log('wp');
-            agregarSpline2();
-        } else {
-            quitarSpline2();
-        }  */
+        if (splineContainerPC) {
+            if (contactoRect.top <= 0) {
+                console.log('wp');
+                splineContainerPC.style.display = 'block';
+            } else {
+                splineContainerPC.style.display = 'none';
+            }
+        }
+
 
     }
+
+    ocultarSpline();
 
     /// Spline del astronauta
 
