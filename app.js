@@ -3,12 +3,12 @@ import { Application } from '@splinetool/runtime';
 document.addEventListener('DOMContentLoaded', function () {
     const pantallaAncho = window.innerWidth;
 
-    if (pantallaAncho > 1200) {
+    // if (pantallaAncho > 1200) {
         setTimeout(function () {
             document.querySelector(".loader").style.display = "none";
             document.querySelector(".contenedor__animacion").style.display = "block";
         }, 3000);
-    }
+    // }
 
 
     // Posicionar el spline dependiendo el tamaño de la pantalla
@@ -45,12 +45,66 @@ document.addEventListener('DOMContentLoaded', function () {
     // Llama a la función para agregar el elemento al cargar la página
     agregarSpline();
 
+    function agregarSpline2() {
+        var contenedorPadre2;
+
+        // Determina el contenedor padre según el tamaño de la pantalla
+            contenedorPadre2 = document.querySelector(".contenedorSpline2");
+            // contenedorPadre = document.querySelector(".contenedorSpline-mobile");
+
+        // Verifica si ya existe un elemento .splineContainer dentro del contenedor padre
+        var elementoExistente2 = contenedorPadre2.querySelector(".splineContainer2");
+
+        // Si no existe un elemento .splineContainer, crea uno y agrégalo al contenedor padre
+
+        if (!elementoExistente2) {
+            var divElemento = document.createElement("div");
+            divElemento.classList.add("splineContainer2");
+            var canvasElemento = document.createElement("canvas");
+            canvasElemento.id = "canvas3d2";
+            divElemento.appendChild(canvasElemento);
+            contenedorPadre2.appendChild(divElemento);
+
+            if (pantallaAncho > 768) {
+                crearSpline2PC();
+            } else {
+                crearSpline2Mobile();
+            }
+        }
+    }
+
+    function quitarSpline2() {
+
+         const contenedorPadre2 = document.querySelector(".contenedorSpline2");
+         const elementoExistente2 = contenedorPadre2.querySelector(".splineContainer2");
+
+        // Si no existe un elemento .splineContainer, crea uno y agrégalo al contenedor padre
+
+        if (elementoExistente2) {
+            // Borrar splineContainer2
+            elementoExistente2.remove();
+        }
+    }
+    
+    agregarSpline2();
 
     function crearSplinePC() {
         // Spline
         const canvas = document.getElementById('canvas3d');
         const app = new Application(canvas);
         app.load('https://prod.spline.design/NZdRNBMIvCemhcFR/scene.splinecode');
+    }
+
+    function crearSpline2PC() {
+        const canvas = document.getElementById('canvas3d2');
+        const app = new Application(canvas);
+        app.load('https://prod.spline.design/DtZm9UqylFzQkmEq/scene.splinecode');
+    }
+
+    function crearSpline2Mobile() {
+        const canvas = document.getElementById('canvas3d2');
+        const app = new Application(canvas);
+        app.load('https://prod.spline.design/Miyin8xZVsgPs6vr/scene.splinecode');
     }
 
     function crearSplineMobile() {
@@ -100,21 +154,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function ocultarSpline() {
         // Obtener el contenedor de proyectos y el contenedor con la clase splineContainer
-        var proyectos = document.getElementById('tecnologias');
+        var tecnologias = document.getElementById('tecnologias');
+        var wordpress = document.getElementById('wordpress');
         var splineContainer = document.querySelector('.splineContainer');
 
-        // Obtener las coordenadas de la sección de proyectos
-        var proyectosRect = proyectos.getBoundingClientRect();
+        // Obtener las coordenadas de la sección de tecnologias
+        var tecnologiasRect = tecnologias.getBoundingClientRect();
+        var wordpressRect = wordpress.getBoundingClientRect();
 
-        // Verificar si la parte superior de la sección de proyectos está en la parte superior de la ventana
-        if (proyectosRect.top <= 0) {
-            // alert(proyectosRect.top)
-            // Ocultar el contenedor con la clase splineContainer
+        // Verificar si la parte superior de la sección de tecnologias está en la parte superior de la ventana
+        if (tecnologiasRect.top <= 0) {
+            // alert(tecnologiasRect.top)
             splineContainer.style.display = 'none';
         } else {
-            // Mostrar el contenedor con la clase splineContainer
             splineContainer.style.display = 'block';
         }
+
+
+        /* if (wordpressRect.top <= 0) {
+            console.log('wp');
+            agregarSpline2();
+        } else {
+            quitarSpline2();
+        }  */
+        
     }
 
     const swipeElements = document.querySelectorAll('.swipe');
@@ -129,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 setTimeout(function () {
                     element.style.display = 'none';
                 }, 1000);
-            }, 5000);
+            }, 3000);
         }
 
     }
