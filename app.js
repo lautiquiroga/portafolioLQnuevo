@@ -1,3 +1,5 @@
+import './node_modules/bootstrap/dist/js/bootstrap.min.js';
+
 import { Application } from '@splinetool/runtime';
 
 document.addEventListener('DOMContentLoaded', function () {
