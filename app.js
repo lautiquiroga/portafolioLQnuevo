@@ -162,7 +162,12 @@ document.addEventListener('DOMContentLoaded', function () {
     function crearSpline2PC() {
         const canvas = document.getElementById('canvas3d2');
         const app = new Application(canvas);
-        app.load('https://prod.spline.design/DtZm9UqylFzQkmEq/scene.splinecode');
+
+        // Astronauta con planeta 3D
+        // app.load('https://prod.spline.design/DtZm9UqylFzQkmEq/scene.splinecode');
+
+        // Astronauta solo, con Hover, para PC
+        app.load('https://prod.spline.design/UgvYS8cR5XgbippE/scene.splinecode');
     }
 
     function crearSpline2Mobile() {
