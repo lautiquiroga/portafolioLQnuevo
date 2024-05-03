@@ -551,6 +551,7 @@ header {
     width: 30%;
     margin-left: 15vw;
 
+    @include centerCol();
 
     h2 {
       display: block;
