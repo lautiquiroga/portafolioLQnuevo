@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lautaro Quiroga</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <!-- <link
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lautaro Quiroga</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <!-- <link
       href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
@@ -15,617 +16,434 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     /> -->
-    <meta
-      name="description"
-      content="Hola! Soy Lautaro Quiroga, Desarrollador FrontEnd. En mi portafolio podrás encontrar mis proyectos destacados, mi currículu y medios de contacto."
-    />
-    <meta
-      property="og:description"
-      name="twitter:description"
-      content="Hola! Soy Lautaro Quiroga, Desarrollador FrontEnd. En mi portafolio podrás encontrar mis proyectos destacados, mi currículum y medios de contacto."
-    />
-    <meta property="og:image" content="media/portfolio-icon.png" />
-    <link rel="icon" href="media/portfolio-icon.png" />
-  </head>
+  <meta name="description"
+    content="Hola! Soy Lautaro Quiroga, Desarrollador FrontEnd. En mi portafolio podrás encontrar mis proyectos destacados, mi currículu y medios de contacto." />
+  <meta property="og:description" name="twitter:description"
+    content="Hola! Soy Lautaro Quiroga, Desarrollador FrontEnd. En mi portafolio podrás encontrar mis proyectos destacados, mi currículum y medios de contacto." />
+  <meta property="og:image" content="media/portfolio-icon.png" />
+  <link rel="icon" href="media/portfolio-icon.png" />
+</head>
 
-  <body>
-    <!-- Loader -->
-    <div class="loader">
-      <div class="spinner"></div>
+<body>
+  <!-- Loader -->
+  <div class="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <div class="contenedor__animacion">
+    <div class="nave-fuego">
+      <img class="fuego" src="./media/fire.gif" alt="" />
+      <img class="nave" src="./media/nave.png" alt="" />
     </div>
 
-    <div class="contenedor__animacion">
-      <div class="nave-fuego">
-        <img class="fuego" src="./media/fire.gif" alt="" />
-        <img class="nave" src="./media/nave.png" alt="" />
+    <!-- Header -->
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid containNav">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <nav class="nav_menu not-active navbar-nav">
+              <a href="#inicio" class="nav-link active"> Inicio </a>
+              <a href="#sobreMi" class="nav-link" data-section="menu" data-value="item2">
+                Sobre mí
+              </a>
+              <a href="#tecnologias" class="nav-link" data-section="menu" data-value="item3">
+                Tecnologías
+              </a>
+              <a href="#proyectos" class="nav-link" data-section="menu" data-value="item5">
+                Proyectos
+              </a>
+              <a href="#contacto" class="nav-link" data-section="menu" data-value="item6">
+                Contacto
+              </a>
+            </nav>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Inicio -->
+    <section id="inicio">
+      <div class="textoInicio">
+        <div>
+          <p class="hola">Hola! Mi nombre es</p>
+          <h1 class="titulo-inicio">Lautaro Quiroga</h1>
+        </div>
+        <div class="descr-inicio">
+          <p>
+            Soy desarrollador de aplicaciones y páginas web con
+            especialización en FrontEnd y conocimientos de BackEnd. Tengo
+            experiencia profesional en programación y WordPress.
+          </p>
+        </div>
+        <div class="btnsInicio">
+          <a class="button-inicio" href="#proyectos"> PROYECTOS </a>
+          <a class="button-inicio cv"
+            href="https://drive.google.com/file/d/1AnYT23aBC5NFxyFN2S0HtFEYwvPgyvNS/view?usp=drive_link" target="_blank"
+            rel="noreferrer">
+            CURRÍCULUM
+          </a>
+          <div class="wsp-linkedin">
+            <a class="circle" href="https://wa.me/+543512780528" target="_blank" rel="noreferrer">
+              <img loading="lazy" src="/media/icon-wpp.png" alt="imgWpp" class="icono wsp" />
+            </a>
+            <a class="circle" href="https://www.linkedin.com/in/lautaro-quiroga/" target="_blank" rel="noreferrer">
+              <img loading="lazy" src="media/icon-linkedin.png" alt="linkedin" class="icono linkedin" />
+            </a>
+          </div>
+        </div>
       </div>
 
-      <!-- Header -->
-      <header>
-        <nav class="navbar navbar-expand-lg">
-          <div class="container-fluid containNav">
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNavAltMarkup"
-              aria-controls="navbarNavAltMarkup"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <nav class="nav_menu not-active navbar-nav">
-                <a href="#inicio" class="nav-link active"> Inicio </a>
-                <a
-                  href="#sobreMi"
-                  class="nav-link"
-                  data-section="menu"
-                  data-value="item2"
-                >
-                  Sobre mí
-                </a>
-                <a
-                  href="#tecnologias"
-                  class="nav-link"
-                  data-section="menu"
-                  data-value="item3"
-                >
-                  Tecnologías
-                </a>
-                <a
-                  href="#proyectos"
-                  class="nav-link"
-                  data-section="menu"
-                  data-value="item5"
-                >
-                  Proyectos
-                </a>
-                <a
-                  href="#contacto"
-                  class="nav-link"
-                  data-section="menu"
-                  data-value="item6"
-                >
-                  Contacto
-                </a>
-              </nav>
-            </div>
-          </div>
-        </nav>
-      </header>
+      <div class="fotoContainer">
+        <div>
+          <img loading="lazy" class="camisa" src="/media/camisa.png" alt="camisa" />
+        </div>
+      </div>
+    </section>
 
-      <!-- Inicio -->
-      <section id="inicio">
-        <div class="textoInicio">
-          <div>
-            <p class="hola">Hola! Mi nombre es</p>
-            <h1 class="titulo-inicio">Lautaro Quiroga</h1>
+    <!-- Sobre mí -->
+    <section id="sobreMi">
+      <div class="textSobremi">
+        <h2 class="titulo-sobremi">Sobre mí</h2>
+        <div class="descr-sobremi">
+          <p>
+            Tengo 22 años y vivo en Córdoba, Argentina. Me dedico al
+            desarrollo de aplicaciones y páginas web. Mi experiencia se basa
+            en la creación de sitios institucionales, Landing Pages,
+            E-Commerces y aplicaciones para dispositivos móviles. Mi enfoque
+            se centra en el FrontEnd, utilizando tecnologías como React, React
+            Native, JavaScript, WordPress, Elementor y WooCommerce.
+          </p>
+          <div class="contenedorSpline-mobile">
+            <img src="./media/swipe.gif" alt="swipe" class="swipe" />
+            <img src="./media/loader.gif" alt="loader" class="loader2" />
           </div>
-          <div class="descr-inicio">
-            <p>
-              Soy desarrollador de aplicaciones y páginas web con
-              especialización en FrontEnd y conocimientos de BackEnd. Tengo
-              experiencia profesional en programación y WordPress.
-            </p>
+          <h3 class="titulo-experiencia">Experiencia laboral</h3>
+          <ul>
+            <li>
+              <b>Desarrollador FrontEnd Freelance:</b>
+              Programación con JavaScript, React.js y React Native para el
+              desarrollo de sitios web, scripts y aplicaciones.
+            </li>
+            <li>
+              <b>Desarrollador web FrontEnd en “Cronopia”:</b>
+              Maquetación web con Elementor, desarrollo de scripts, uso y
+              configuración de plugins y tecnologías como WooCommerce y Make,
+              entre otras.
+            </li>
+            <li>
+              <b>Co-fundador y Programador en “GoPage”:</b>
+              Desarrollo de la aplicación web "Menú virtual" entre otros
+              proyectos.
+            </li>
+          </ul>
+          <div class="stat">
+            <span class="stat-number" data-target="100">+0</span>
+            <span class="stat-text">Sitios web desarrollados</span>
           </div>
-          <div class="btnsInicio">
-            <a class="button-inicio" href="#proyectos"> PROYECTOS </a>
-            <a
-              class="button-inicio cv"
-              href="https://drive.google.com/file/d/1AnYT23aBC5NFxyFN2S0HtFEYwvPgyvNS/view?usp=drive_link"
-              target="_blank"
-              rel="noreferrer"
-            >
-              CURRÍCULUM
-            </a>
-            <div class="wsp-linkedin">
-              <a
-                class="circle"
-                href="https://wa.me/+543512780528"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img
-                  loading="lazy"
-                  src="/media/icon-wpp.png"
-                  alt="imgWpp"
-                  class="icono wsp"
-                />
-              </a>
-              <a
-                class="circle"
-                href="https://www.linkedin.com/in/lautaro-quiroga/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img
-                  loading="lazy"
-                  src="media/icon-linkedin.png"
-                  alt="linkedin"
-                  class="icono linkedin"
-                />
-              </a>
-            </div>
+        </div>
+      </div>
+      <div class="contenedorSpline-pc">
+        <img src="./media/swipe.gif" alt="swipe" class="swipe" />
+        <img src="./media/loader.gif" alt="loader" class="loader2" />
+      </div>
+    </section>
+
+    <!-- Tecnologías  -->
+    <section id="tecnologias">
+      <h2 class="titulo-tecno">Tecnologías aprendidas</h2>
+
+      <div class="cardsTecno">
+        <div class="cardTecno">
+          <img loading="lazy" class="logoTecno html" src="/media/logo-html.png" alt="Logo - HTML" />
+          <div class="">
+            <p>HTML5</p>
           </div>
         </div>
 
-        <div class="fotoContainer">
-          <div>
-            <img
-              loading="lazy"
-              class="camisa"
-              src="/media/camisa.png"
-              alt="camisa"
-            />
+        <div class="cardTecno">
+          <img loading="lazy" class="logoTecno css" src="/media/icon-css.png" alt="Logo - CSS3" />
+          <div class="">
+            <p>CSS3</p>
           </div>
         </div>
-      </section>
 
-      <!-- Sobre mí -->
-      <section id="sobreMi">
-        <div class="textSobremi">
-          <h2 class="titulo-sobremi">Sobre mí</h2>
-          <div class="descr-sobremi">
-            <p>
-              Tengo 22 años y vivo en Córdoba, Argentina. Me dedico al
-              desarrollo de aplicaciones y páginas web. Mi experiencia se basa
-              en la creación de sitios institucionales, Landing Pages,
-              E-Commerces y aplicaciones para dispositivos móviles. Mi enfoque
-              se centra en el FrontEnd, utilizando tecnologías como React, React
-              Native, JavaScript, WordPress, Elementor y WooCommerce.
-            </p>
-            <div class="contenedorSpline-mobile">
-              <img src="./media/swipe.gif" alt="swipe" class="swipe" />
-              <img src="./media/loader.gif" alt="loader" class="loader2" />
-            </div>
-            <h3 class="titulo-experiencia">Experiencia laboral</h3>
-            <ul>
-              <li>
-                <b>Desarrollador FrontEnd Freelance:</b>
-                Programación con JavaScript, React.js y React Native para el
-                desarrollo de sitios web, scripts y aplicaciones.
-              </li>
-              <li>
-                <b>Desarrollador web FrontEnd en “Cronopia”:</b>
-                Maquetación web con Elementor, desarrollo de scripts, uso y
-                configuración de plugins y tecnologías como WooCommerce y Make,
-                entre otras.
-              </li>
-              <li>
-                <b>Co-fundador y Programador en “GoPage”:</b>
-                Desarrollo de la aplicación web "Menú virtual" entre otros
-                proyectos.
-              </li>
-            </ul>
+        <div class="cardTecno">
+          <img loading="lazy" class="logoTecno js" src="/media/icon-js.png" alt="Logo - JavaScript" />
+          <div class="">
+            <p>JavaScript</p>
           </div>
         </div>
-        <div class="contenedorSpline-pc">
-          <img src="./media/swipe.gif" alt="swipe" class="swipe" />
-          <img src="./media/loader.gif" alt="loader" class="loader2" />
-        </div>
-      </section>
 
-      <!-- Tecnologías  -->
-      <section id="tecnologias">
-        <h2 class="titulo-tecno">Tecnologías aprendidas</h2>
-
-        <div class="cardsTecno">
-          <div class="cardTecno">
-            <img
-              loading="lazy"
-              class="logoTecno html"
-              src="/media/logo-html.png"
-              alt="Logo - HTML"
-            />
-            <div class="">
-              <p>HTML5</p>
-            </div>
-          </div>
-
-          <div class="cardTecno">
-            <img
-              loading="lazy"
-              class="logoTecno css"
-              src="/media/icon-css.png"
-              alt="Logo - CSS3"
-            />
-            <div class="">
-              <p>CSS3</p>
-            </div>
-          </div>
-
-          <div class="cardTecno">
-            <img
-              loading="lazy"
-              class="logoTecno js"
-              src="/media/icon-js.png"
-              alt="Logo - JavaScript"
-            />
-            <div class="">
-              <p>JavaScript</p>
-            </div>
-          </div>
-
-          <div class="cardTecno">
-            <img
-              loading="lazy"
-              class="logoTecno react"
-              src="/media/icon-React.png"
-              alt="Logo - React"
-            />
-            <div class="">
-              <p>React.js</p>
-            </div>
-          </div>
-
-          <div class="cardTecno">
-            <img
-              loading="lazy"
-              class="logoTecno react"
-              src="/media/icon-React.png"
-              alt="Logo - React"
-            />
-            <div class="">
-              <p>React Native</p>
-            </div>
-          </div>
-
-          <div class="cardTecno">
-            <img
-              loading="lazy"
-              class="logoTecno wordpress"
-              src="/media/wordpress.png"
-              alt="Logo - WordPress"
-            />
-            <div class="">
-              <p>WordPress</p>
-            </div>
-          </div>
-
-          <div class="cardTecno">
-            <img
-              loading="lazy"
-              class="logoTecno"
-              src="/media/Elementor.png"
-              alt="Logo - Elementor"
-            />
-            <div class="">
-              <p>Elementor</p>
-            </div>
-          </div>
-
-          <div class="cardTecno">
-            <img
-              loading="lazy"
-              class="logoTecno woo"
-              src="/media/woo.png"
-              alt="Logo - WooCommerce"
-            />
-            <div class="">
-              <p>WooCommerce</p>
-            </div>
-          </div>
-
-          <div class="cardTecno">
-            <img
-              loading="lazy"
-              class="logoTecno"
-              src="/media/icon-spline.png"
-              alt="Logo - Spline"
-            />
-            <div class="">
-              <p>Spline</p>
-            </div>
-          </div>
-
-          <div class="cardTecno">
-            <img
-              loading="lazy"
-              class="logoTecno"
-              src="/media/icon-gsap.png"
-              alt="Logo - Gsap"
-            />
-            <div class="">
-              <p>Gsap</p>
-            </div>
+        <div class="cardTecno">
+          <img loading="lazy" class="logoTecno react" src="/media/icon-React.png" alt="Logo - React" />
+          <div class="">
+            <p>React.js</p>
           </div>
         </div>
-      </section>
 
-      <!-- Proyectos -->
-      <section id="proyectos">
-        <div class="codigo" id="codigo">
-          <h2 class="title-proyectos">Mis trabajos destacados con código</h2>
-          <div class="cards_container--proyectos">
-            <div class="cards--proyectos card_portafolio">
-              <video
-                class="video"
-                src="media/quickbites2.mp4"
-                type="video/mp4"
-                poster="media/quickbites.jpg"
-                controls
-              ></video>
-              <div class="poster-overlay"></div>
-              <div class="container_textCard--proyectos">
-                <div class="cardTexto">
-                  <h3 class="title-proyecto">
-                    <b>QuickBites - Menú Virtual</b>
-                  </h3>
-                  <p class="info-proyecto">
-                    Es una aplicación web FullStack hecha con React y NodeJS que
-                    está destinada a restaurantes. Cuenta con dos apartados, uno
-                    para clientes y otro para administradores. Le permite a los
-                    clientes presenciales del restaurante poder hacer pedidos
-                    desde la mesa usando la aplicación. Los administradores
-                    pueden editar el Menú y administrar los pedidos hechos por
-                    los clientes, entre otras funcionalidades.
-                  </p>
-                </div>
+        <div class="cardTecno">
+          <img loading="lazy" class="logoTecno react" src="/media/icon-React.png" alt="Logo - React" />
+          <div class="">
+            <p>React Native</p>
+          </div>
+        </div>
+
+        <div class="cardTecno">
+          <img loading="lazy" class="logoTecno wordpress" src="/media/wordpress.png" alt="Logo - WordPress" />
+          <div class="">
+            <p>WordPress</p>
+          </div>
+        </div>
+
+        <div class="cardTecno">
+          <img loading="lazy" class="logoTecno" src="/media/Elementor.png" alt="Logo - Elementor" />
+          <div class="">
+            <p>Elementor</p>
+          </div>
+        </div>
+
+        <div class="cardTecno">
+          <img loading="lazy" class="logoTecno woo" src="/media/woo.png" alt="Logo - WooCommerce" />
+          <div class="">
+            <p>WooCommerce</p>
+          </div>
+        </div>
+
+        <div class="cardTecno">
+          <img loading="lazy" class="logoTecno" src="/media/icon-spline.png" alt="Logo - Spline" />
+          <div class="">
+            <p>Spline</p>
+          </div>
+        </div>
+
+        <div class="cardTecno">
+          <img loading="lazy" class="logoTecno" src="/media/icon-gsap.png" alt="Logo - Gsap" />
+          <div class="">
+            <p>Gsap</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="proyectos">
+      <div class="codigo" id="codigo">
+        <h2 class="title-proyectos">Mis trabajos destacados con código</h2>
+        <div class="cards_container--proyectos">
+          <div class="cards--proyectos card_portafolio">
+            <video class="video" src="media/quickbites2.mp4" type="video/mp4" poster="media/quickbites.jpg"
+              controls></video>
+            <div class="poster-overlay"></div>
+            <div class="container_textCard--proyectos">
+              <div class="cardTexto">
+                <h3 class="title-proyecto">
+                  <b>QuickBites - Menú Virtual</b>
+                </h3>
+                <p class="info-proyecto">
+                  Es una aplicación web FullStack hecha con React y NodeJS que
+                  está destinada a restaurantes. Cuenta con dos apartados, uno
+                  para clientes y otro para administradores. Le permite a los
+                  clientes presenciales del restaurante poder hacer pedidos
+                  desde la mesa usando la aplicación. Los administradores
+                  pueden editar el Menú y administrar los pedidos hechos por
+                  los clientes, entre otras funcionalidades.
+                </p>
               </div>
             </div>
-
-            <a
-              href="https://fenixtrading.net/#/es"
-              target="_blank"
-              class="cards--proyectos card_portafolio"
-            >
-              <div class="container_imgCard--proyectos">
-                <img
-                  loading="lazy"
-                  src="media/fenix-trading.png"
-                  alt="Proyecto: Fenix Trading"
-                />
-              </div>
-
-              <div class="container_textCard--proyectos">
-                <div class="cardTexto">
-                  <h3 class="title-proyecto">
-                    <b>Fenix Trading</b>
-                  </h3>
-                  <p class="info-proyecto">
-                    En este trabajo freelance optimicé el código preexistente
-                    del Home para admitir dos idiomas y desarrollé las páginas
-                    'Ahorros' y 'Tradings' usando tecnologías como React, Vite y
-                    CSS. Esta experiencia no solo me permitió aplicar mis
-                    habilidades técnicas, sino también fortalecer mi capacidad
-                    de interactuar directamente con el cliente y enfrentar
-                    desafíos del mundo real en el desarrollo de software.
-                  </p>
-                </div>
-              </div>
-            </a>
-
-            <a
-              href="https://camseals.com/cotizador/"
-              target="_blank"
-              class="cards--proyectos card_portafolio"
-            >
-              <div class="container_imgCard--proyectos">
-                <img
-                  loading="lazy"
-                  src="media/cotizador.png"
-                  alt="Proyecto: cotizador"
-                />
-              </div>
-
-              <div class="container_textCard--proyectos">
-                <div class="cardTexto">
-                  <h3 class="title-proyecto">
-                    <b>Cotizador para CamSeals</b>
-                  </h3>
-                  <p class="info-proyecto">
-                    En este encargo freelance desarrollé un cotizador de
-                    perfiles metalúrgicos para Camseals utilizando React y
-                    JavaScript. El proyecto posee un selector de categorías y
-                    perfiles, optimizado para facilitar la selección de datos
-                    por parte de los usuarios, incluyendo imágenes. Trabajé
-                    directamente con el cliente para comprender sus necesidades
-                    y asegurar que el resultado final cumpliera con sus
-                    expectativas.
-                  </p>
-                </div>
-              </div>
-            </a>
           </div>
+
+          <a href="https://fenixtrading.net/#/es" target="_blank" class="cards--proyectos card_portafolio">
+            <div class="container_imgCard--proyectos">
+              <img loading="lazy" src="media/fenix-trading.png" alt="Proyecto: Fenix Trading" />
+            </div>
+
+            <div class="container_textCard--proyectos">
+              <div class="cardTexto">
+                <h3 class="title-proyecto">
+                  <b>Fenix Trading</b>
+                </h3>
+                <p class="info-proyecto">
+                  En este trabajo freelance optimicé el código preexistente
+                  del Home para admitir dos idiomas y desarrollé las páginas
+                  'Ahorros' y 'Tradings' usando tecnologías como React, Vite y
+                  CSS. Esta experiencia no solo me permitió aplicar mis
+                  habilidades técnicas, sino también fortalecer mi capacidad
+                  de interactuar directamente con el cliente y enfrentar
+                  desafíos del mundo real en el desarrollo de software.
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <!-- <a href="https://camseals.com/cotizador/" target="_blank" class="cards--proyectos card_portafolio">
+            <div class="container_imgCard--proyectos">
+              <img loading="lazy" src="media/cotizador.png" alt="Proyecto: cotizador" />
+            </div>
+
+            <div class="container_textCard--proyectos">
+              <div class="cardTexto">
+                <h3 class="title-proyecto">
+                  <b>Cotizador para CamSeals</b>
+                </h3>
+                <p class="info-proyecto">
+                  En este encargo freelance desarrollé un cotizador de
+                  perfiles metalúrgicos para Camseals utilizando React y
+                  JavaScript. El proyecto posee un selector de categorías y
+                  perfiles, optimizado para facilitar la selección de datos
+                  por parte de los usuarios, incluyendo imágenes. Trabajé
+                  directamente con el cliente para comprender sus necesidades
+                  y asegurar que el resultado final cumpliera con sus
+                  expectativas.
+                </p>
+              </div>
+            </div>
+          </a> -->
+
+          <a href="https://cl.testapp.com.ar/" target="_blank" class="cards--proyectos card_portafolio">
+            <div class="container_imgCard--proyectos">
+              <img loading="lazy" src="media/clauto.png" alt="Proyecto: cotizador" />
+            </div>
+
+            <div class="container_textCard--proyectos">
+              <div class="cardTexto">
+                <h3 class="title-proyecto">
+                  <b>Clauto</b>
+                </h3>
+                <p class="info-proyecto">
+                  Este sitio fue creado para <i>Clauto</i> , un clúster automotriz y movilidad sostenible de
+                  Córdoba. Fue desarrollado utilizando HTML, Bootstrap, SCSS y JavaScript. <br>
+                  Incluye la integración de Google Maps, lo que me permitió personalizar un mapa interactivo con los
+                  socios de la empresa. Programé
+                  las funciones de búsqueda y filtrado. Además, está conectado con el panel
+                  de administración de WordPress
+                </p>
+              </div>
+            </div>
+          </a>
         </div>
-        <div class="wp" id="wordpress">
-          <h2 class="title-proyectos">Mis trabajos destacados con WordPress</h2>
-          <div class="cards_container--proyectos">
-            <a
-              href="https://quieroushuaia.com.ar/"
-              target="_blank"
-              class="cards--proyectos card_portafolio"
-            >
-              <div class="container_imgCard--proyectos">
-                <img
-                  loading="lazy"
-                  src="media/quiero-ushuaia.png"
-                  alt="Quiero
-              Ushuaia"
-                />
-              </div>
+      </div>
+      <div class="wp" id="wordpress">
+        <h2 class="title-proyectos">Mis trabajos destacados con WordPress</h2>
+        <div class="cards_container--proyectos">
+          <a href="https://quieroushuaia.com.ar/" target="_blank" class="cards--proyectos card_portafolio">
+            <div class="container_imgCard--proyectos">
+              <img loading="lazy" src="media/quiero-ushuaia.png" alt="Quiero
+              Ushuaia" />
+            </div>
 
-              <div class="container_textCard--proyectos">
-                <div class="cardTexto">
-                  <h3 class="title-proyecto">
-                    <b>Quiero Ushuaia</b>
-                  </h3>
-                  <p class="info-proyecto">
-                    Es un E-Commerce de venta de excursiones y traslados para la
-                    empresa <i>Quiero Ushuaia</i>. Está creado en WordPress con
-                    Elementor y WooCommerce. Tiene categorías, filtros,
-                    formulario de reservas e implementacion de BackEnd a través
-                    de Make. Los datos de los productos se organizan mediante el
-                    uso de Custom Fields, lo cual permite que los clientes
-                    puedan cargarlos de manera sencilla.
-                  </p>
-                </div>
+            <div class="container_textCard--proyectos">
+              <div class="cardTexto">
+                <h3 class="title-proyecto">
+                  <b>Quiero Ushuaia</b>
+                </h3>
+                <p class="info-proyecto">
+                  Es un E-Commerce de venta de excursiones y traslados para la
+                  empresa <i>Quiero Ushuaia</i>. Está creado en WordPress con
+                  Elementor y WooCommerce. Tiene categorías, filtros,
+                  formulario de reservas e implementacion de BackEnd a través
+                  de Make. Los datos de los productos se organizan mediante el
+                  uso de Custom Fields, lo cual permite que los clientes
+                  puedan cargarlos de manera sencilla.
+                </p>
               </div>
-            </a>
+            </div>
+          </a>
 
-            <a
-              href="https://porlagloria.com/"
-              target="_blank"
-              a
-              class="cards--proyectos card_portafolio"
-            >
-              <div class="container_imgCard--proyectos">
-                <img
-                  loading="lazy"
-                  src="media/por-la-gloria.png"
-                  alt="Proyecto: Por La Gloria"
-                />
+          <a href="https://porlagloria.com/" target="_blank" a class="cards--proyectos card_portafolio">
+            <div class="container_imgCard--proyectos">
+              <img loading="lazy" src="media/por-la-gloria.png" alt="Proyecto: Por La Gloria" />
+            </div>
+            <div class="container_textCard--proyectos">
+              <div class="cardTexto">
+                <h3 class="title-proyecto">
+                  <b>Por La Gloria</b>
+                </h3>
+                <p class="info-proyecto">
+                  Desarrollé esta página web para <i>Por La Gloria</i>, una
+                  empresa dedicada a impulsar talentos deportivos a nivel
+                  mundial. Fue maquetada con Elementor y creé plantillas para
+                  garantizar una identidad coherente. Integré dos idiomas y
+                  diseñé el sitio con meticuloso detalle siguiendo las
+                  especificaciones del cliente y los principios de diseño
+                  UX/UI.
+                </p>
               </div>
-              <div class="container_textCard--proyectos">
-                <div class="cardTexto">
-                  <h3 class="title-proyecto">
-                    <b>Por La Gloria</b>
-                  </h3>
-                  <p class="info-proyecto">
-                    Desarrollé esta página web para <i>Por La Gloria</i>, una
-                    empresa dedicada a impulsar talentos deportivos a nivel
-                    mundial. Fue maquetada con Elementor y creé plantillas para
-                    garantizar una identidad coherente. Integré dos idiomas y
-                    diseñé el sitio con meticuloso detalle siguiendo las
-                    especificaciones del cliente y los principios de diseño
-                    UX/UI.
-                  </p>
-                </div>
-              </div>
-            </a>
+            </div>
+          </a>
 
-            <a
-              href="https://lacomu.co/"
-              target="_blank"
-              class="cards--proyectos card_portafolio"
-            >
-              <div class="container_imgCard--proyectos">
-                <img
-                  loading="lazy"
-                  src="media/tedx.png"
-                  alt="Proyecto: La Comunidad TEDX"
-                />
+          <a href="https://lacomu.co/" target="_blank" class="cards--proyectos card_portafolio">
+            <div class="container_imgCard--proyectos">
+              <img loading="lazy" src="media/tedx.png" alt="Proyecto: La Comunidad TEDX" />
+            </div>
+            <div class="container_textCard--proyectos">
+              <div class="cardTexto">
+                <h3 class="title-proyecto">
+                  <b>La Comunidad TEDx Córdoba</b>
+                </h3>
+                <p class="info-proyecto">
+                  Este sitio web fue desarrollado para <i>TEDx</i>, una
+                  reconocida organización dedicada a difundir ideas
+                  innovadoras y estimular el diálogo a través de conferencias
+                  a nivel mundial. En este caso, el proyecto fue creado
+                  específicamente para La Comunidad TEDx Córdoba. Se trata de
+                  una landing page que ofrece a los usuarios una membresía con
+                  beneficios exclusivos.
+                </p>
               </div>
-              <div class="container_textCard--proyectos">
-                <div class="cardTexto">
-                  <h3 class="title-proyecto">
-                    <b>La Comunidad TEDx Córdoba</b>
-                  </h3>
-                  <p class="info-proyecto">
-                    Este sitio web fue desarrollado para <i>TEDx</i>, una
-                    reconocida organización dedicada a difundir ideas
-                    innovadoras y estimular el diálogo a través de conferencias
-                    a nivel mundial. En este caso, el proyecto fue creado
-                    específicamente para La Comunidad TEDx Córdoba. Se trata de
-                    una landing page que ofrece a los usuarios una membresía con
-                    beneficios exclusivos.
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Contacto -->
-      <section id="contacto">
-        <div class="container--contacto">
-          <h2 data-section="contacto" data-value="title">Contacto</h2>
+    <!-- Contacto -->
+    <section id="contacto">
+      <div class="container--contacto">
+        <h2 data-section="contacto" data-value="title">Contacto</h2>
 
-          <div>
-            <a
-              class="circle"
-              href="https://wa.me/+543512780528"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                loading="lazy"
-                src="media/icon-wpp.png"
-                alt="imgWpp"
-                class="icono wsp"
-              />
-            </a>
-            <a
-              class="circle"
-              href="https://www.linkedin.com/in/lautaro-quiroga/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                loading="lazy"
-                src="media/icon-linkedin.png"
-                alt="linkedin"
-                class="icono linkedin"
-              />
-            </a>
-          </div>
+        <div>
+          <a class="circle" href="https://wa.me/+543512780528" target="_blank" rel="noreferrer">
+            <img loading="lazy" src="media/icon-wpp.png" alt="imgWpp" class="icono wsp" />
+          </a>
+          <a class="circle" href="https://www.linkedin.com/in/lautaro-quiroga/" target="_blank" rel="noreferrer">
+            <img loading="lazy" src="media/icon-linkedin.png" alt="linkedin" class="icono linkedin" />
+          </a>
+        </div>
 
-          <!-- <div class="alertaContainer">
+        <!-- <div class="alertaContainer">
           <p>Mensaje enviado con éxito</p>
         </div> -->
 
-          <form
-            id="form"
-            class="form-contact"
-            action="https://formsubmit.co/lautiquiroga10@gmail.com"
-            method="POST"
-            name="contacto-portafolio"
-          >
-            <input
-              type="hidden"
-              name="_subject"
-              value="Nuevo correo del PORTAFOLIO"
-            />
-            <input type="hidden" name="_captcha" value="false" />
+        <form id="form" class="form-contact" action="https://formsubmit.co/lautiquiroga10@gmail.com" method="POST"
+          name="contacto-portafolio">
+          <input type="hidden" name="_subject" value="Nuevo correo del PORTAFOLIO" />
+          <input type="hidden" name="_captcha" value="false" />
 
-            <input
-              id="nombre"
-              type="text"
-              name="name"
-              placeholder="Escribe tu nombre"
-              required
-            />
-            <input
-              id="email"
-              type="email"
-              name="email"
-              placeholder="Escribe tu email"
-              required
-            />
+          <input id="nombre" type="text" name="name" placeholder="Escribe tu nombre" required />
+          <input id="email" type="email" name="email" placeholder="Escribe tu email" required />
 
-            <textarea
-              id="mensaje"
-              cols="20"
-              rows="4"
-              name="message"
-              placeholder="Escribe un mensaje"
-              required
-            ></textarea>
+          <textarea id="mensaje" cols="20" rows="4" name="message" placeholder="Escribe un mensaje" required></textarea>
 
-            <div class="btn_form--contacto">
-              <button
-                id="btn-enviar"
-                type="submit"
-                data-section="contacto"
-                data-value="btn-enviar"
-              >
-                ENVIAR
-              </button>
-            </div>
-          </form>
-        </div>
+          <div class="btn_form--contacto">
+            <button id="btn-enviar" type="submit" data-section="contacto" data-value="btn-enviar">
+              ENVIAR
+            </button>
+          </div>
+        </form>
+      </div>
 
-        <div class="contenedorSpline2"></div>
+      <div class="contenedorSpline2"></div>
 
-        <img src="./media/luna.png" alt="luna" class="luna" />
-        <img src="./media/luna2.png" alt="luna" class="luna2" />
-      </section>
+      <img src="./media/luna.png" alt="luna" class="luna" />
+      <img src="./media/luna2.png" alt="luna" class="luna2" />
+    </section>
 
-      <!-- Footer -->
-      <!-- <footer id="footer">
+    <!-- Footer -->
+    <!-- <footer id="footer">
         <p class="p1">Lautaro Quiroga</p>
         <p class="p2">
           Ciudad de Córdoba. Córdoba - Argentina
@@ -633,33 +451,31 @@
         </p>
         <p class="p3">Copyright © | Todos los derechos reservados.</p>
       </footer> -->
-    </div>
+  </div>
 
-    <!-- Scripts -->
+  <!-- Scripts -->
 
-    <!-- Spline -->
-    <script
-      async
-      src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"
-    ></script>
-    <script type="importmap">
+  <!-- Spline -->
+  <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+  <script type="importmap">
       {
         "imports": {
           "@splinetool/runtime": "https://unpkg.com/@splinetool/runtime@1.0.68/build/runtime.js"
         }
       }
     </script>
-    <!-- Gsap -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
-    <!-- Bootstrap -->
-    <!-- <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- Gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+  <!-- Bootstrap -->
+  <!-- <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script> -->
 
-    <script type="module" src="app.js"></script>
-  </body>
+  <script type="module" src="app.js"></script>
+</body>
+
 </html>

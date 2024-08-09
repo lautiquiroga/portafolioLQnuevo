@@ -18,6 +18,52 @@ document.addEventListener('DOMContentLoaded', function () {
     // }
 
 
+    // Animación de los números en la sección 8:
+    const counters = document.querySelectorAll('.stat-number');
+    const duration = 1000;
+
+    const formatNumber = (number) => {
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    };
+
+    const animateCounter = (counter) => {
+        const target = +counter.getAttribute('data-target');
+        const increment = target / (duration / 10);
+        let current = 0;
+        const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+                counter.textContent = `+${formatNumber(Math.ceil(current))}`;
+                setTimeout(updateCounter, 10);
+            } else {
+                counter.textContent = `+${formatNumber(target)}`;
+            }
+        };
+        updateCounter();
+    };
+
+    // Configuración de Intersection Observer
+    const observerOptions = {
+        root: null,
+        threshold: 0.1
+    };
+
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    counters.forEach(counter => {
+        observer.observe(counter);
+    });
+
+
     ////// SPLINE //////
 
     /// Spline del planeta

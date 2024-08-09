@@ -12251,6 +12251,20 @@ header .navbar .navbar-nav .nav-link.active {
 #sobreMi .textSobremi .descr-sobremi li:not(:last-of-type) {
   margin-bottom: 10px;
 }
+#sobreMi .textSobremi .descr-sobremi .stat {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+#sobreMi .textSobremi .descr-sobremi .stat .stat-number {
+  font-weight: bold;
+  font-size: 60px;
+  color: rgb(44, 131, 189);
+}
+#sobreMi .textSobremi .descr-sobremi .stat .stat-text {
+  text-align: center;
+}
 
 #tecnologias {
   background-color: rgb(13, 13, 13);
