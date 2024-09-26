@@ -12351,7 +12351,6 @@ header .navbar .navbar-nav .nav-link.active {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
   gap: 30px;
 }

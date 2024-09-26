@@ -333,43 +333,49 @@ document.addEventListener('DOMContentLoaded', function () {
                     trigger: ".contenedor__animacion",
                     start: "top top",
                     end: "100% 100%",
-                    scrub: true,
+                    scrub: 0.5,
                 },
             });
+
+            // El evento con la mayor duración es el que marca el ritmo de la timeline. Todos los demás eventos se ajustan dependiendo de este evento con mayor duración. Esto significa que mientras mayor sea el número del evento con la duracion más grande, más rápidos serán los demás eventos. Porque por ejemplo, si el evento mayor tiene una duración de 7, los demás deben ajustarse para que el mayor tarde 7. Si un evento tiene la duracion de 1, su duración total será de 1/7 (poca duracion = más velocidad), mientras que el que tiene la duracion de 7, va a tener una duracion total de 7/7 (el más lento)
+
+            // CONCLUSIÓN: Mientras más larga sea la página (porque tiene más contenido), más grande deberá ser el valor del duration del evento más lento (en este caso el último).
 
             // Movimiento
             tlPC.to(naveFuego, {
                 y: 2000,
-                duration: 4,
+                duration: 1.5,
                 scale: .8
-            });
+            }, 0); // Inicia en el segundo 0
 
             // Rotar
             tlPC.to(naveFuego, {
                 rotation: 90,
-                duration: 4,
-            }, "-=2");
+                duration: 2,
+            }, 0.5); // Empieza en el segundo 0.5
 
             // Movimiento
             tlPC.to(naveFuego, {
-                duration: 4,
+                duration: 2,
                 scale: 2,
                 x: -1800,
-            }, "-=2");
+            }, 1.5); // Empieza en el segundo 1.5
 
             // Rotar
             tlPC.to(naveFuego, {
-                rotation: -20,
-                duration: 4,
-            }, "-=2");
+                rotation: -10,
+                duration: 2,
+            }, 2.2); // Empieza en el segundo 2
 
             // Movimiento
             tlPC.to(naveFuego, {
                 duration: 4,
-                y: 4400,
-            }, "-=2");
+                y: 4600,
+            }, 3); // Empieza en el segundo 3
         }
     }
+
+
 
 
     // Tablet
