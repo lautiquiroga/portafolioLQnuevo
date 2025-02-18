@@ -11,10 +11,10 @@ import { Application } from '@splinetool/runtime';
 document.addEventListener('DOMContentLoaded', function () {
 
     // if (pantallaAncho > 1200) {
-    setTimeout(function () {
-        document.querySelector(".loader").style.display = "none";
-        document.querySelector(".contenedor__animacion").style.display = "block";
-    }, 3000);
+    // setTimeout(function () {
+    //     document.querySelector(".loader").style.display = "none";
+    //     document.querySelector(".contenedor__animacion").style.display = "block";
+    // }, 3000);
     // }
 
 
