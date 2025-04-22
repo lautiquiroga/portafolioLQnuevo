@@ -581,6 +581,21 @@
     ></script> -->
 
   <script type="module" src="app.js"></script>
+
+  <script src="https://www.google.com/recaptcha/api.js?render=6Lc1-SArAAAAAP6jW8s4Vx2DWukUHwJcC9Fid5QJ"></script>
+  <script>
+    grecaptcha.ready(function () {
+      grecaptcha.execute('6Lc1-SArAAAAAP6jW8s4Vx2DWukUHwJcC9Fid5QJ', { action: 'submit' }).then(function (token) {
+        const form = document.getElementById('form');
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'g-recaptcha-response';
+        input.value = token;
+        form.appendChild(input);
+      });
+    });
+  </script>
+
 </body>
 
 </html>
