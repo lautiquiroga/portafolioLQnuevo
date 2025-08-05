@@ -80,10 +80,9 @@ body::before {
 }
 
 // @media(min-width:1200px) {
-.contenedor__animacion {
-  display: none;
-}
-
+// .contenedor__animacion {
+//   display: none;
+// }
 // }
 
 .contenedor__animacion {
@@ -171,9 +170,10 @@ header {
     padding: 0 0 7% 5%;
 
     .hola {
-      font-size: $tituloSize;
+      font-size: 20px;
       line-height: 1;
-      margin-bottom: -0.5%;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
 
     .titulo-inicio {
@@ -1237,3 +1237,38 @@ footer {
     display: none;
   }
 } */
+
+.wsp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 70px;
+  height: 70px;
+  z-index: 99999;
+  transition: all 0.3s;
+}
+
+.wsp-btn img {
+  width: 100%;
+  height: 100%;
+}
+
+.wsp-btn:hover {
+  transform: scale(1.1);
+}
+
+.grecaptcha-badge {
+  bottom: 110px !important;
+  z-index: 9999;
+}
+
+@media (max-width: 767px) {
+  .wsp-btn {
+    bottom: 12px;
+    right: 12px;
+  }
+
+  .grecaptcha-badge {
+    bottom: 100px !important;
+  }
+}
