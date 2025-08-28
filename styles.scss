@@ -12,10 +12,10 @@ $magentaFuerte: #ff0059;
 $fondoClaro: #f2f2f2;
 $grisClaro: #e7e7e7;
 $grisOscuro: #808080;
-$tituloSize: 35px;
+$tituloSize: 30px;
 $tituloSizeResp: 30px;
-$descrSize: 18px;
-$descrLineHeight: 150%;
+$descrSize: 17px;
+$descrLineHeight: 1.8;
 $light: 300;
 $white: #c9b9d3;
 $jet: #131520;
@@ -188,7 +188,7 @@ header {
 
     .descr-inicio {
       margin: 5% 0;
-      font-size: 22px;
+      font-size: 19px;
       font-weight: 400;
       line-height: $descrLineHeight;
       max-width: 600px;
@@ -498,7 +498,7 @@ header {
       z-index: 99;
 
       .video {
-        height: 250px;
+        aspect-ratio: 16/9;
         cursor: pointer;
         object-position: top center;
       }
@@ -507,14 +507,14 @@ header {
 
         img {
           width: 100%;
-          height: 250px;
+          aspect-ratio: 16/9;
           object-fit: cover;
           object-position: top center;
         }
       }
 
       .container_textCard--proyectos {
-        padding: 5%;
+        padding: 30px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -533,8 +533,7 @@ header {
             font-size: 24px;
             color: $white;
             display: inline;
-            line-height: 1;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             width: 100%;
             text-align: center;
           }
