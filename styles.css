@@ -24689,7 +24689,7 @@ footer .p3 {
     height: 50px;
     width: 50px;
     position: absolute;
-    top: 50%;
+    top: 45%;
   }
   #tecnologias {
     padding: 80px 7%;
@@ -24718,6 +24718,7 @@ footer .p3 {
   }
   #proyectos .cards_container--proyectos .cards--proyectos .container_textCard--proyectos {
     min-height: 0;
+    padding: 30px 20px;
   }
   #contacto {
     display: flex;
